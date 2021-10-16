@@ -26,6 +26,7 @@ import org.json.JSONObject;
 
 import java.util.Random;
 
+import me.akshay.arclothing.R;
 import me.akshay.arclothing.ui.login.LoginActivity;
 
 public class FirebaseNotifyService extends FirebaseMessagingService {
@@ -73,7 +74,7 @@ public class FirebaseNotifyService extends FirebaseMessagingService {
                     NotificationCompat.Builder notificationBuilder;
                     try {
                         notificationBuilder = new NotificationCompat.Builder(FirebaseNotifyService.this, ADMIN_CHANNEL_ID)
-//                                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                                .setSmallIcon(R.mipmap.ic_launcher_foreground)
                                 .setStyle(new NotificationCompat.BigPictureStyle()
                                         .bigLargeIcon(null))
                                 .setContentTitle(json.getString("title"))

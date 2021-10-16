@@ -3,6 +3,7 @@ package me.akshay.arclothing.common.index;
 public class Constants {
     public interface IntentKeys{
         int RC_SIGN_IN = 9001;
+        int SPLASH_DURATION = 3000;
     }
 
     public interface IntConstants{

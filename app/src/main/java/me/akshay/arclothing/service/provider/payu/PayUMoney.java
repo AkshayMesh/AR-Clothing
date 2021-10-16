@@ -2,21 +2,15 @@ package me.akshay.arclothing.service.provider.payu;
 
 import android.app.Activity;
 import android.content.Context;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.payumoney.core.PayUmoneyConfig;
-import com.payumoney.core.PayUmoneyConstants;
 import com.payumoney.core.PayUmoneySdkInitializer;
 import com.payumoney.sdkui.ui.utils.PayUmoneyFlowManager;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
 
 import me.akshay.arclothing.R;
-import me.akshay.arclothing.data.util.Loader;
+import me.akshay.arclothing.ui.helper.Loader;
 //todo uncomment
 abstract public class PayUMoney {
     private Context mContext;

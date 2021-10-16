@@ -2,7 +2,9 @@ package me.akshay.arclothing.data.room;
 
 import android.content.Context;
 import java.util.ArrayList;
+import java.util.List;
 
+import me.akshay.arclothing.common.models.ProductInventory;
 import me.akshay.arclothing.data.room.dao.CodesDao;
 
 public class DatabaseUtil {
@@ -44,12 +46,8 @@ public class DatabaseUtil {
         this.mCodeDao = mCodeDao;
     }
 
-    public void insertItem(String... items){
-        getCodeDao().insertAll(items);
-    }
-
-    public void killCatCode(String cat){
-        getCodeDao().killCat(cat);
+    public void killCatCode(int id, String code){
+        getCodeDao().killProduct(id, code);
     }
 
     public ArrayList<String> getAllCodes(){
@@ -60,8 +58,12 @@ public class DatabaseUtil {
         getCodeDao().nukeTable();
     }
 
-    public ArrayList<String> getSelectedCodes(String opt){
-        return new ArrayList<>(getCodeDao().getCodeByCategory(opt));
+    public void insertItem(ProductInventory productInventory) {
+        getCodeDao().insertAll(productInventory);
+    }
+
+    public void insertAll(List<ProductInventory> inventoryList) {
+        getCodeDao().insertBulk(inventoryList);
     }
 
 }
