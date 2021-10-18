@@ -3,4 +3,7 @@
 
     <string name="presented_by">Developed By</string>
     <string name="developer_name">Group - 4</string>
+
+    <!--Transition names-->
+    <string name="title_transition">title</string>
 </resources>

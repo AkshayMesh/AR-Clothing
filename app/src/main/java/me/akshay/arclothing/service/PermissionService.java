@@ -3,7 +3,9 @@ package me.akshay.arclothing.service;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 
 import androidx.annotation.RequiresApi;
@@ -15,6 +17,18 @@ import java.util.List;
 
 @SuppressLint("StaticFieldLeak")
 public class PermissionService {
+
+    /**
+     * @param no receiver contact
+     * @param msg text to send
+     * @return intent to sms
+     */
+    public static Intent sendSMS(String no, String msg) {
+        Uri uri = Uri.parse("smsto:"+no);
+        Intent it = new Intent(Intent.ACTION_SENDTO, uri);
+        it.putExtra("sms_body", msg);
+        return it;
+    }
 
     public static final int REQUEST_CODE_PERMISSION_DEFAULT = 1;
 
