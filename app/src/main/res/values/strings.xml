@@ -6,4 +6,7 @@
 
     <!--Transition names-->
     <string name="title_transition">title</string>
+
+    <!--grammar-->
+    <string name="coma">,</string>
 </resources>

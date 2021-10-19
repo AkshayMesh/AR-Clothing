@@ -10,16 +10,36 @@ public class Constants {
         int LOADER_DELAY = 500;
     }
 
-    public interface StringConstants {
+    public interface Credentials {
         String BASE = "DATA";
         String APP_KEY = "me_terms";
+        String SHARED_PREF_CURRENCY = "sharedPreferencesCurrency";
+        String SHARED_PREF_CURRENCY_IN = "sharedPreferencesCurrencyIn";
+    }
+
+    public interface PreferenceKeys{
         String REGISTRATION = "entered";
+        String USER = "user";
+
+        String EMPTY_KEY = "";
+
+        String TAX = "tax";
+        String ENVIRONMENT = "envo";
+        String MERCHANT_ID = "m_id";
+        String PUBLIC_KEY = "pub_id";
+        String PRIVATE_KEY = "pri_id";
+
+        String COMPANY_NAME="company_name";
+
+        String IS_BUY_NOW = "is_buy_now";
+        String MAIN_RESPONSE = "main_response";
+    }
+
+    public interface StringConstants {
         String GOOGLE_LOGIN = "google";
         String PROFILE = "photograph";
         String NEW_USER = "new";
         String EMAIL = "email";
-        String EMPTY_KEY = "";
-        String USER = "user";
     }
 
     public interface EncryptionKey {
