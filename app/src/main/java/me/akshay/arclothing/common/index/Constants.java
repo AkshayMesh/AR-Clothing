@@ -61,7 +61,7 @@ public class Constants {
 
         //LOCAL HOST URL
         String PROTOCOL = "http://";
-        String IP_ADDRESS = "192.168.0.107";
+        String IP_ADDRESS = "192.168.140.16";
         String PARENT = "/marhamproducts/";
 
         String MAIN_URL = PROTOCOL+IP_ADDRESS+PARENT+"mhmadmindash/public/";

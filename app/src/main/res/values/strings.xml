@@ -7,6 +7,16 @@
     <!--Transition names-->
     <string name="title_transition">title</string>
 
+    <!--Content Description-->
+    <string name="common_desc">AppLogoImage</string>
+
     <!--grammar-->
     <string name="coma">,</string>
+
+    <!--Login UI-->
+    <string name="welcome_string">Welcome to,</string>
+    <string name="google_sign_in_btn">Continue with google</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="enter_your_number">Enter your number</string>
+    <string name="login_text">Login to enjoy all our services</string>
 </resources>
