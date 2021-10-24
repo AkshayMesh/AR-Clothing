@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">AR-Shop</string>
 
-    <string name="presented_by">Developed By</string>
-    <string name="developer_name">Group - 4</string>
+    <string name="presented_by">Copyright all rights reserved. This application is part of final year project done at Nagpur Institute Of Technology by students of Computer Science and Technology branch.</string>
+    <string name="developer_name">2021 &#8211; 2022</string>
 
     <!--Transition names-->
     <string name="title_transition">title</string>
@@ -16,7 +16,8 @@
     <!--Login UI-->
     <string name="welcome_string">Welcome to,</string>
     <string name="google_sign_in_btn">Continue with google</string>
-    <string name="get_otp">GET OTP</string>
+    <string name="get_otp">Get OTP</string>
     <string name="enter_your_number">Enter your number</string>
     <string name="login_text">Login to enjoy all our services</string>
+    <string name="or">or</string>
 </resources>

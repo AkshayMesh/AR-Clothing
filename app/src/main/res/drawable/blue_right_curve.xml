@@ -4,20 +4,20 @@
         android:state_pressed="false">
         <shape>
             <corners
-                android:topRightRadius="@dimen/dimen_12dp"
-                android:bottomRightRadius="@dimen/dimen_12dp"/>
+                android:topRightRadius="20dp"
+                android:bottomRightRadius="20dp"/>
             <solid
-                android:color="@color/start_start"/>
+                android:color="@color/colorPrimary"/>
         </shape>
     </item>
     <item
         android:state_pressed="true">
         <shape>
             <corners
-                android:topRightRadius="@dimen/dimen_12dp"
-                android:bottomRightRadius="@dimen/dimen_12dp"/>
+                android:topRightRadius="20dp"
+                android:bottomRightRadius="20dp"/>
             <solid
-                android:color="@color/start_center"/>
+                android:color="@color/start_start"/>
         </shape>
     </item>
 </selector>

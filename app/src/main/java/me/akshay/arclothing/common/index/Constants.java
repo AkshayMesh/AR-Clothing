@@ -45,9 +45,6 @@ public class Constants {
     public interface EncryptionKey {
         String ENCRYPTION_KEY = "fedcba9876543210";
         String ENCRYPTION_IV = "0123456789abcdef";
-        String PAYU_MARCHAND_KEY = "yeu1PyDI";
-        String PAYU_MERCHAND_ID = "7163375";
-        String SALT = "Q6MKVCZqrH";
     }
 
     public interface WebURL {
@@ -61,7 +58,7 @@ public class Constants {
 
         //LOCAL HOST URL
         String PROTOCOL = "http://";
-        String IP_ADDRESS = "192.168.140.16";
+        String IP_ADDRESS = "192.168.0.104";
         String PARENT = "/marhamproducts/";
 
         String MAIN_URL = PROTOCOL+IP_ADDRESS+PARENT+"mhmadmindash/public/";

@@ -32,15 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         binding.setViewModel(viewModel);
         binding.executePendingBindings();
-        checkNetworkStatus();
-    }
-
-    private void checkNetworkStatus() {
-        StatusBarHelper.getAdaptiveNavBar(this, R.color.white);
-
-        if (NetworkHelper.hasNetworkAccess(this)) {
-
-        }
+        StatusBarHelper.getAdaptiveNavBar(this, R.color.start_start);
     }
 
 }

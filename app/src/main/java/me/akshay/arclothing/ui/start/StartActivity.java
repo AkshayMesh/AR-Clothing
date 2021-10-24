@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.index.Constants;
+import me.akshay.arclothing.common.models.DeviceModel;
 import me.akshay.arclothing.common.models.Slider;
 import me.akshay.arclothing.common.response.MainProductResponse;
 import me.akshay.arclothing.common.response.SettingsResponse;
@@ -48,7 +49,7 @@ public class StartActivity extends AppCompatActivity implements Observer<Setting
     }
 
     private void checkNetworkStatus() {
-        StatusBarHelper.getAdaptiveNavBar(this, R.color.white);
+        StatusBarHelper.getAdaptiveNavBar(this, R.color.start_start);
 
         if (NetworkHelper.hasNetworkAccess(this)) {
             UiHelper.hideViews(viewBinding.offlineText);
@@ -74,6 +75,8 @@ public class StartActivity extends AppCompatActivity implements Observer<Setting
             slider.mSliderMains = mainResponse.dataModel.mSliderMains;
             if (slider.mSliderMains.size()>0){
                 Local.setSlider(this, slider);
+                DeviceModel model = new DeviceModel();
+                System.out.println("DEVICE INFO : \n"+model.toString());
                 checkTimeToFinish(endTime);
             }else {
                 Toast.makeText(this,"Unable to connect to server",Toast.LENGTH_LONG).show();
@@ -89,8 +92,7 @@ public class StartActivity extends AppCompatActivity implements Observer<Setting
         intent = new Intent(StartActivity.this, LoginActivity.class);
 //                }
         ActivityOptions options = ActivityOptions
-                .makeSceneTransitionAnimation(StartActivity.this,
-                        viewBinding.appNameTv, getString(R.string.title_transition));
+                .makeSceneTransitionAnimation(this, viewBinding.appNameTv, getString(R.string.title_transition));
 
         double differenceInSec = (double) (endTime - startTime) / 1000;
         if (differenceInSec >= 2.5) {

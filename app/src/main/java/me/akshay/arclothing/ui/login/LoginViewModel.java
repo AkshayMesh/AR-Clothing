@@ -4,4 +4,8 @@ import androidx.lifecycle.ViewModel;
 
 public class LoginViewModel extends ViewModel implements LoginRepoCallBack{
 
+    public void googleSigning(){
+
+    }
+
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "996501100461",
+    "project_id": "me-ar-shop",
+    "storage_bucket": "me-ar-shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996501100461:android:b35e717a46c77b35cbb324",
+        "android_client_info": {
+          "package_name": "me.akshay.arclothing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996501100461-11kkooi5gks7h787d78cp6fvqvvf54j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVhDSkn3bNQXRspm5rArHP_HZSmTYuMz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996501100461-11kkooi5gks7h787d78cp6fvqvvf54j9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
