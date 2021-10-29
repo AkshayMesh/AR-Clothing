@@ -5,6 +5,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class UserRegistrationInfo {
 
+    public String dateLogin;
+    public String status;
+    public String loginType;
+    public String dateCreated;
+
     @SerializedName("id")
     @Expose
     public String id;
@@ -24,5 +29,7 @@ public class UserRegistrationInfo {
     @SerializedName("useremail")
     @Expose
     public String useremail;
+
+
 
 }

@@ -10,8 +10,6 @@ import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.index.Constants;
 import me.akshay.arclothing.common.index.Constants.Credentials;
 import me.akshay.arclothing.common.index.Constants.PreferenceKeys;
-import me.akshay.arclothing.common.models.Slider;
-import me.akshay.arclothing.common.response.MainProductResponse;
 import me.akshay.arclothing.common.response.UserRegistrationResponse;
 
 public class Local {
@@ -22,21 +20,9 @@ public class Local {
         editor.commit();
     }
 
-    public static void setSlider(Context context, Slider response) {
-        SharedPreferences.Editor editor = context.getSharedPreferences(Credentials.BASE,
-                Context.MODE_PRIVATE).edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(response);
-        editor.putString(Constants.PreferenceKeys.MAIN_RESPONSE, json);
-        editor.commit();
-    }
-
-    public static void setMainResponse(Context context, MainProductResponse response){
-        SharedPreferences.Editor editor = context.getSharedPreferences(Credentials.BASE, Context.MODE_PRIVATE).edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(response);
-        editor.putString(Constants.PreferenceKeys.MAIN_RESPONSE, json);
-        editor.commit();
+    public static boolean getLogStatus(Context context){
+        SharedPreferences myPref = context.getSharedPreferences(Credentials.BASE, Context.MODE_PRIVATE);
+        return myPref.getBoolean(PreferenceKeys.REGISTRATION,false);
     }
     
     public static void setUserLog(Context context, UserRegistrationResponse user){

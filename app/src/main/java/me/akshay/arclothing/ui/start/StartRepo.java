@@ -1,14 +1,13 @@
 package me.akshay.arclothing.ui.start;
 
+import static java.net.HttpURLConnection.HTTP_OK;
 import static me.akshay.arclothing.common.index.Constants.ServerUrl.API_TOKEN;
 
-import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import me.akshay.arclothing.common.response.MainProductResponse;
-import me.akshay.arclothing.common.response.SettingsResponse;
+import me.akshay.arclothing.common.response.StringResponse;
 import me.akshay.arclothing.data.web.RetrofitClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,50 +26,30 @@ public class StartRepo {
         this.callBack = callBack;
     }
 
-    public void updateProducts(String id){
-        AsyncTask.execute(()-> getMain(id).enqueue(new Callback<MainProductResponse>() {
+    public void updateSettings(){
+        getSettings().enqueue(new Callback<StringResponse>() {
             @Override
-            public void onResponse(@NonNull Call<MainProductResponse> call
-                    , @NonNull Response<MainProductResponse> response) {
-                if (response.body() != null) {
-                    callBack.setValue(response.body());
-                }
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<MainProductResponse> call, @NonNull Throwable t) {
-                Log.e("Setting Response", t.getMessage());
-                callBack.setValue("Unable to get settings");
-            }
-        }));
-    }
-
-    private Call<MainProductResponse> getMain(String id){
-        return RetrofitClient.getApiService().getProductMain(
-                API_TOKEN, "1","", id
-        );
-    }
-
-    public void updateSettings(String id){
-        getSettings().enqueue(new Callback<SettingsResponse>() {
-            @Override
-            public void onResponse(@NonNull Call<SettingsResponse> call
-                    ,@NonNull Response<SettingsResponse> response) {
+            public void onResponse(@NonNull Call<StringResponse> call
+                    , @NonNull Response<StringResponse> response) {
                 if (response.body()!=null){
-                    callBack.setValue(response.body());
-                    updateProducts(id);
+                    Log.d("Repo", "updateSettings: got response");
+                    if (response.body().statusCode == HTTP_OK){
+                        callBack.setValue(response.body());
+                    }else {
+                        callBack.setValue(response.body().message);
+                    }
                 }
             }
 
             @Override
-            public void onFailure(@NonNull Call<SettingsResponse> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<StringResponse> call, @NonNull Throwable t) {
                 Log.e("Setting Response", t.getMessage());
                 callBack.setValue("Unable to get settings");
             }
         });
     }
 
-    private Call<SettingsResponse> getSettings(){
-        return RetrofitClient.getApiService().hitSetting(API_TOKEN);
+    private Call<StringResponse> getSettings(){
+        return RetrofitClient.getApiService().getSetting(API_TOKEN);
     }
 }
