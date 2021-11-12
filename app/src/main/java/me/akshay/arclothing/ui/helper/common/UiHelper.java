@@ -8,6 +8,8 @@ import androidx.databinding.BindingAdapter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import java.sql.Date;
+
 public class UiHelper {
 
     /**
@@ -38,6 +40,14 @@ public class UiHelper {
                 .load(bitmap)
                 .apply(new RequestOptions())
                 .into(imageView);
+    }
+
+    /**
+     * Getting current date
+     * @return String
+     */
+    public static String getCurrentDate() {
+        return (new Date(System.currentTimeMillis())).toString();
     }
 
     /**

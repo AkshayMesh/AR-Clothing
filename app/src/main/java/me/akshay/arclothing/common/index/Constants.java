@@ -44,13 +44,12 @@ public class Constants {
         String FURL = "https://www.payumoney.com/mobileapp/payumoney/failure.php";
     }
 
-
     public interface ServerUrl {
         String API_TOKEN = "mAdmin4";
 
         //LOCAL HOST URL
         String PROTOCOL = "http://";
-        String IP_ADDRESS = "192.168.0.101";
+        String IP_ADDRESS = "192.168.145.16";
         String PARENT = "/vto";
         String MAIN_URL = PROTOCOL+IP_ADDRESS+PARENT+"/api";
         String ROOT_URL = MAIN_URL + "/requests/";
