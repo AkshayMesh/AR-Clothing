@@ -1,8 +1,13 @@
 package me.akshay.arclothing.ui.helper.common;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
@@ -59,6 +64,14 @@ public class UiHelper {
         for (View view :
                 views) {
             view.setVisibility(View.GONE);
+        }
+    }
+
+    public static abstract class LaunchActivityForResult{
+        public abstract void onResult(ActivityResult result);
+        public ActivityResultLauncher<Intent> setLauncher(AppCompatActivity activity){
+            return activity.registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(), this::onResult);
         }
     }
 

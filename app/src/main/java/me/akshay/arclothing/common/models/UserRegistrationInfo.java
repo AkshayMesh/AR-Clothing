@@ -10,6 +10,8 @@ public class UserRegistrationInfo {
     public String loginType;
     public String dateCreated;
 
+    public UserRegistrationInfo() {}
+
     @SerializedName("id")
     @Expose
     public String id;
@@ -29,7 +31,5 @@ public class UserRegistrationInfo {
     @SerializedName("useremail")
     @Expose
     public String useremail;
-
-
 
 }

@@ -48,6 +48,10 @@ public class StartActivity extends AppCompatActivity implements Observer<StringR
         StatusBarHelper.getAdaptiveNavBar(this, R.color.start_start);
 
         if (NetworkHelper.hasNetworkAccess(this)) {
+            //todo remove this line
+            checkTimeToFinish(System.currentTimeMillis());
+
+
             UiHelper.hideViews(viewBinding.offlineText);
             repo.updateSettings();
             viewModel.getSettingsLiveData().observe(this, this);

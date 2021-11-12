@@ -7,13 +7,14 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
 import me.akshay.arclothing.R;
-import me.akshay.arclothing.common.index.Constants.StringConstants;
+import me.akshay.arclothing.common.index.Constants.PreferenceKeys;
+import me.akshay.arclothing.common.index.Constants.Credentials;
 import me.akshay.arclothing.common.response.UserRegistrationResponse;
 
 public class LocalPreference {
 
     public static void setLocaleString(Context context, String key, String value){
-        SharedPreferences sPref = context.getSharedPreferences(StringConstants.APP_KEY
+        SharedPreferences sPref = context.getSharedPreferences(Credentials.APP_KEY
                 , Context.MODE_PRIVATE);
         SharedPreferences.Editor sPrefEditor = sPref.edit();
         sPrefEditor.putString(key, value);
@@ -21,13 +22,13 @@ public class LocalPreference {
     }
 
     public static String getLocaleString(Context context, String key){
-        SharedPreferences sPref = context.getSharedPreferences(StringConstants.APP_KEY
+        SharedPreferences sPref = context.getSharedPreferences(Credentials.APP_KEY
                 , Context.MODE_PRIVATE);
-        return sPref.getString(key, StringConstants.EMPTY_KEY);
+        return sPref.getString(key, PreferenceKeys.EMPTY_KEY);
     }
 
     public static void setLocaleFlag(Context context, String key, boolean value){
-        SharedPreferences sPref = context.getSharedPreferences(StringConstants.APP_KEY
+        SharedPreferences sPref = context.getSharedPreferences(Credentials.APP_KEY
                 , Context.MODE_PRIVATE);
         SharedPreferences.Editor sPrefEditor = sPref.edit();
         sPrefEditor.putBoolean(key, value);
@@ -35,7 +36,7 @@ public class LocalPreference {
     }
 
     public static boolean getLocaleFlag(Context context, String key){
-        SharedPreferences sPref = context.getSharedPreferences(StringConstants.APP_KEY
+        SharedPreferences sPref = context.getSharedPreferences(Credentials.APP_KEY
                 , Context.MODE_PRIVATE);
         return sPref.getBoolean(key, false);
     }
@@ -49,20 +50,20 @@ public class LocalPreference {
         }catch (Exception e){
             e.printStackTrace();
         }
-        SharedPreferences.Editor editor = context.getSharedPreferences(StringConstants.BASE, Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor editor = context.getSharedPreferences(Credentials.BASE, Context.MODE_PRIVATE).edit();
         Gson gson = new Gson();
         String json = gson.toJson(user);
-        editor.putString(StringConstants.USER, json);
+        editor.putString(PreferenceKeys.USER, json);
         editor.apply();
-        SharedPreferences.Editor editor1 = context.getSharedPreferences(StringConstants.BASE, Context.MODE_PRIVATE).edit();
-        editor1.putBoolean(StringConstants.REGISTRATION, true);
+        SharedPreferences.Editor editor1 = context.getSharedPreferences(Credentials.BASE, Context.MODE_PRIVATE).edit();
+        editor1.putBoolean(PreferenceKeys.REGISTRATION, true);
         editor1.apply();
     }
 
     public static UserRegistrationResponse getUserLog(Context context){
-        SharedPreferences myPref = context.getSharedPreferences(StringConstants.BASE,Context.MODE_PRIVATE);
+        SharedPreferences myPref = context.getSharedPreferences(Credentials.BASE,Context.MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = myPref.getString(StringConstants.USER,"");
+        String json = myPref.getString(PreferenceKeys.USER,"");
         return gson.fromJson(json, UserRegistrationResponse.class);
     }
 
