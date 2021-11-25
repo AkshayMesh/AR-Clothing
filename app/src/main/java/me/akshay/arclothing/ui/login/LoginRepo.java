@@ -3,6 +3,7 @@ package me.akshay.arclothing.ui.login;
 import static java.net.HttpURLConnection.HTTP_OK;
 import static me.akshay.arclothing.common.index.Constants.ServerUrl.API_TOKEN;
 import static me.akshay.arclothing.common.index.Constants.StringConstants.GOOGLE_LOGIN;
+import static me.akshay.arclothing.common.index.Constants.StringConstants.PHONE_LOGIN;
 
 import android.content.Intent;
 import android.util.Log;
@@ -33,7 +34,10 @@ public class LoginRepo {
     private final LoginRepoCallBack callBack;
     private static final String TAG = "Login Repo";
     private UserRegistrationInfo account;
+    private String verificationId;
+    public String accountToken;
     public PhoneAuthProvider.OnVerificationStateChangedCallbacks phoneCallBack;
+    private Callback<UserRegistrationResponse> userRegistrationResponseCallback;
 
     public LoginRepo(LoginRepoCallBack callBack) {
         this.callBack = callBack;
@@ -45,27 +49,38 @@ public class LoginRepo {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                 Log.d(TAG, "onVerificationCompleted");
-                signInWithCredential(phoneAuthCredential);
+                account = new UserRegistrationInfo();
+                account.loginType = PHONE_LOGIN;
+                signInWithCredential(phoneAuthCredential, false);
             }
 
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
-                callBack.setValue("Unable to log in");
-                if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                 if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     callBack.setValue("invalid request");
                 } else if (e instanceof FirebaseTooManyRequestsException) {
                     callBack.setValue("Please try again later");
                     // The SMS quota for the project has been exceeded
-                }
+                }callBack.setValue("Unable to log in");
+
             }
 
             @Override
             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                 super.onCodeSent(s, forceResendingToken);
+                verificationId = s;
                 callBack.setValue("SMS Sent");
+                callBack.setValue(s, true);
             }
         };
-        }
+    }
+
+    public void createAuthCredentials(String s){
+        account = new UserRegistrationInfo();
+        account.loginType = PHONE_LOGIN;
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, s);
+        signInWithCredential(credential, false);
+    }
 
     public void onGoogleSignInResult(Intent data) {
         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
@@ -74,8 +89,14 @@ public class LoginRepo {
             callBack.setValue("authenticating...");
             firebaseAuthWithGoogleAccount(account);
         }catch (ApiException e){
+            e.printStackTrace();
             callBack.setValue("Unable to log in");
         }
+    }
+
+
+    private Call<UserRegistrationResponse> registerViaPhone() {
+        return RetrofitClient.getApiService().setUserViaPhone(API_TOKEN, accountToken, account.loginType);
     }
 
     private Call<UserRegistrationResponse> registerViaGoogle(){
@@ -89,25 +110,35 @@ public class LoginRepo {
         this.account.userfullname = account.getDisplayName();
         this.account.userprofilepath = account.getPhotoUrl()!=null ? account.getPhotoUrl().toString() : "";
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-        signInWithCredential(credential);
+        signInWithCredential(credential, true);
     }
 
-    private void signInWithCredential(AuthCredential credential) {
+    private void signInWithCredential(AuthCredential credential, boolean haveAccount) {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
                         callBack.setValue(true);
-                        registerToServer();
+                        registerToServer(haveAccount);
                     }else {
-                        callBack.setValue(false);
-                        callBack.setValue("Please try again later");
+                        if (task.getException() instanceof FirebaseAuthInvalidCredentialsException){
+                            callBack.setValue("Invalid code");
+                        }else {
+                            callBack.setValue("Please try again later");
+                        }
                     }
                 });
     }
 
-    private void registerToServer() {
-        registerViaGoogle().enqueue(new Callback<UserRegistrationResponse>() {
+    private void registerToServer(boolean hasAccount) {
+        initUserResponseCallBack();
+        if (hasAccount)
+        registerViaGoogle().enqueue(userRegistrationResponseCallback);
+        else registerViaPhone().enqueue(userRegistrationResponseCallback);
+    }
+
+    private void initUserResponseCallBack() {
+        userRegistrationResponseCallback = new Callback<UserRegistrationResponse>() {
             @Override
             public void onResponse(@NonNull Call<UserRegistrationResponse> call
                     , @NonNull Response<UserRegistrationResponse> response) {
@@ -126,6 +157,7 @@ public class LoginRepo {
                 Log.e(TAG, t.getMessage());
                 callBack.setValue("Unable to register account");
             }
-        });
+        };
     }
+
 }

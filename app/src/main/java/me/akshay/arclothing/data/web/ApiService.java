@@ -30,6 +30,6 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(USER+ADD+PHP)
     Call<UserRegistrationResponse> setUserViaPhone(@Field(COMMON_FIELD) String token,
-                                                    @Field("mobile") String nm,
+                                                    @Field("mobile") String mo,
                                                     @Field("loginType") String type);
 }

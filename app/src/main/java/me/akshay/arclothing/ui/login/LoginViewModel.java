@@ -5,12 +5,15 @@ import androidx.lifecycle.ViewModel;
 
 import me.akshay.arclothing.common.response.UserRegistrationResponse;
 
-public class LoginViewModel extends ViewModel implements LoginRepoCallBack{
+public class LoginViewModel extends ViewModel implements LoginRepoCallBack {
 
+    private final MutableLiveData<String> token = new MutableLiveData<>();
     private final MutableLiveData<String> toastMessage = new MutableLiveData<>();
     private final MutableLiveData<Boolean> loginStatus = new MutableLiveData<>();
     private final MutableLiveData<UserRegistrationResponse> userSignInResponse = new MutableLiveData<>();
-    public String enteredNumber;
+    public MutableLiveData<String> getToken() {
+        return token;
+    }
 
     public MutableLiveData<String> getToastMessage() {
         return toastMessage;
@@ -30,6 +33,11 @@ public class LoginViewModel extends ViewModel implements LoginRepoCallBack{
     }
 
     @Override
+    public void setValue(String s, boolean b) {
+        token.setValue(s);
+    }
+
+    @Override
     public void setValue(boolean f) {
         loginStatus.setValue(f);
     }
@@ -38,4 +46,5 @@ public class LoginViewModel extends ViewModel implements LoginRepoCallBack{
     public void setValue(UserRegistrationResponse r) {
         userSignInResponse.setValue(r);
     }
+
 }

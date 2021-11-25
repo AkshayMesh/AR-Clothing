@@ -1,6 +1,8 @@
 package me.akshay.arclothing.ui.helper.common;
 
+import android.content.Context;
 import android.content.Intent;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -67,12 +69,19 @@ public class UiHelper {
         }
     }
 
+    /**
+     * abstract class for Launch Activity for some results
+     */
     public static abstract class LaunchActivityForResult{
         public abstract void onResult(ActivityResult result);
         public ActivityResultLauncher<Intent> setLauncher(AppCompatActivity activity){
             return activity.registerForActivityResult(
                     new ActivityResultContracts.StartActivityForResult(), this::onResult);
         }
+    }
+
+    public static int dpToPx(float dp, Context context) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }
 
     /**

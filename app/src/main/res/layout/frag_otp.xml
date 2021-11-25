@@ -11,19 +11,20 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/dimen_24sp"
             android:layout_marginTop="32dp"
-            android:text="Enter OTP"
+            android:text="@string/enter_otp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
         <EditText
+            android:id="@+id/et_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:layout_marginBottom="300dp"
-            android:digits="6"
             android:ems="6"
             android:hint="@string/digits6"
+            android:focusable="true"
             android:imeOptions="actionSend"
             android:inputType="number"
             android:textAlignment="center"

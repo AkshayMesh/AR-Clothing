@@ -49,7 +49,7 @@ public class StartActivity extends AppCompatActivity implements Observer<StringR
 
         if (NetworkHelper.hasNetworkAccess(this)) {
             //todo remove this line
-            checkTimeToFinish(System.currentTimeMillis());
+//            checkTimeToFinish(System.currentTimeMillis());
 
 
             UiHelper.hideViews(viewBinding.offlineText);

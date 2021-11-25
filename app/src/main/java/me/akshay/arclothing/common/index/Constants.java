@@ -18,12 +18,15 @@ public class Constants {
         String REGISTRATION = "entered";
         String USER = "user";
 
+        String AUTH_TOKEN = "authToken";
+
         String EMPTY_KEY = "";
 
         String TAX = "tax";
         String INVOICE = "invoice";
 
         String IS_BUY_NOW = "is_buy_now";
+
         String MAIN_RESPONSE = "main_response";
     }
 
@@ -32,6 +35,7 @@ public class Constants {
         String PHONE_LOGIN = "phone";
         String PROFILE = "photograph";
         String NEW_USER = "new";
+        String IND_CODE = "+91";
     }
 
     public interface EncryptionKey {
@@ -49,7 +53,7 @@ public class Constants {
 
         //LOCAL HOST URL
         String PROTOCOL = "http://";
-        String IP_ADDRESS = "192.168.145.16";
+        String IP_ADDRESS = "192.168.0.104";
         String PARENT = "/vto";
         String MAIN_URL = PROTOCOL+IP_ADDRESS+PARENT+"/api";
         String ROOT_URL = MAIN_URL + "/requests/";
