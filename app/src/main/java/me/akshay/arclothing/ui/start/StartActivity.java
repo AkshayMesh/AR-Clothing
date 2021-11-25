@@ -1,5 +1,7 @@
 package me.akshay.arclothing.ui.start;
 
+import static me.akshay.arclothing.common.index.Constants.PreferenceKeys.MAIN_RESPONSE;
+
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,17 +14,18 @@ import androidx.lifecycle.ViewModelProvider;
 
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.index.Constants;
-import me.akshay.arclothing.common.response.StringResponse;
+import me.akshay.arclothing.common.response.MainProductResponse;
 import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.data.preference.Shared;
 import me.akshay.arclothing.data.util.NetworkHelper;
+import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.ActivityStartBinding;
 import me.akshay.arclothing.ui.helper.common.StatusBarHelper;
 import me.akshay.arclothing.ui.helper.common.UiHelper;
 import me.akshay.arclothing.ui.home.HomeActivity;
 import me.akshay.arclothing.ui.login.LoginActivity;
 
-public class StartActivity extends AppCompatActivity implements Observer<StringResponse>{
+public class StartActivity extends AppCompatActivity implements Observer<MainProductResponse>{
 
     private ActivityStartBinding viewBinding;
     private StartViewModel viewModel;
@@ -89,7 +92,8 @@ public class StartActivity extends AppCompatActivity implements Observer<StringR
     }
 
     @Override
-    public void onChanged(StringResponse settings) {
+    public void onChanged(MainProductResponse settings) {
+        Shared.setLocaleString(this, MAIN_RESPONSE,UtilityClass.objectToString(settings));
         long endTime = System.currentTimeMillis();
         Shared.setLocaleFlag(this, Constants.PreferenceKeys.IS_BUY_NOW,false);
         Local.setCurrency(this, "₹");

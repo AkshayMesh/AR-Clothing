@@ -3,7 +3,10 @@ package me.akshay.arclothing.common.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 import me.akshay.arclothing.common.models.DataModel;
+import me.akshay.arclothing.common.models.ProductModel;
 
 public class MainProductResponse {
 
@@ -17,7 +20,6 @@ public class MainProductResponse {
 
     @SerializedName("data")
     @Expose
-    public DataModel dataModel;
+    public ArrayList<ProductModel> data;
 
-    public boolean isOkay;
 }

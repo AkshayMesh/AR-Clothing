@@ -9,6 +9,22 @@ public class ProductModel {
     @Expose
     public int id;
 
+    @SerializedName("status")
+    @Expose
+    public int status;
+
+    @SerializedName("product_code")
+    @Expose
+    public String productCode;
+
+    @SerializedName("category")
+    @Expose
+    public int category;
+
+    @SerializedName("title")
+    @Expose
+    public String title;
+
     @SerializedName("image_name")
     @Expose
     public String imageUri;
@@ -21,14 +37,6 @@ public class ProductModel {
     @Expose
     public String description;
 
-    @SerializedName("product_code")
-    @Expose
-    public String productCode;
-
-    @SerializedName("title")
-    @Expose
-    public String title;
-
     @SerializedName("prev_price")
     @Expose
     public float previousPrice;
@@ -37,14 +45,22 @@ public class ProductModel {
     @Expose
     public float currentPrice;
 
-    @SerializedName("favourited")
-    @Expose
-    public int isFavourite;
-
     @SerializedName("product_gst")
     @Expose
     public float prodGst;
 
-    public String userID;
+    @SerializedName("product_delivery_price")
+    @Expose
+    public float delivery_price;
+
+    @SerializedName("featured")
+    @Expose
+    public int featured;
+
+    @SerializedName("created")
+    @Expose
+    public String created;
+
+    public int isFavourite;
 
 }

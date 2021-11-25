@@ -7,7 +7,7 @@ import static me.akshay.arclothing.common.index.Constants.Functions.ALL;
 import static me.akshay.arclothing.common.index.Constants.ParentPath.PRODUCT;
 import static me.akshay.arclothing.common.index.Constants.ParentPath.USER;
 
-import me.akshay.arclothing.common.response.StringResponse;
+import me.akshay.arclothing.common.response.MainProductResponse;
 import me.akshay.arclothing.common.response.UserRegistrationResponse;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -17,7 +17,7 @@ import retrofit2.http.POST;
 public interface ApiService {
     @FormUrlEncoded
     @POST(PRODUCT+ALL+PHP)
-    Call<StringResponse> getSetting(@Field(COMMON_FIELD) String token);
+    Call<MainProductResponse> getSetting(@Field(COMMON_FIELD) String token);
 
     @FormUrlEncoded
     @POST(USER+ADD+PHP)

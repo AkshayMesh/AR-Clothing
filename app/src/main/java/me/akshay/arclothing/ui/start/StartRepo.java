@@ -7,6 +7,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import me.akshay.arclothing.common.response.MainProductResponse;
 import me.akshay.arclothing.common.response.StringResponse;
 import me.akshay.arclothing.data.web.RetrofitClient;
 import retrofit2.Call;
@@ -27,10 +28,10 @@ public class StartRepo {
     }
 
     public void updateSettings(){
-        getSettings().enqueue(new Callback<StringResponse>() {
+        getSettings().enqueue(new Callback<MainProductResponse>() {
             @Override
-            public void onResponse(@NonNull Call<StringResponse> call
-                    , @NonNull Response<StringResponse> response) {
+            public void onResponse(@NonNull Call<MainProductResponse> call
+                    , @NonNull Response<MainProductResponse> response) {
                 if (response.body()!=null){
                     Log.d("Repo", "updateSettings: got response");
                     if (response.body().statusCode == HTTP_OK){
@@ -42,14 +43,14 @@ public class StartRepo {
             }
 
             @Override
-            public void onFailure(@NonNull Call<StringResponse> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<MainProductResponse> call, @NonNull Throwable t) {
                 Log.e("Setting Response", t.getMessage());
                 callBack.setValue("Unable to get settings");
             }
         });
     }
 
-    private Call<StringResponse> getSettings(){
+    private Call<MainProductResponse> getSettings(){
         return RetrofitClient.getApiService().getSetting(API_TOKEN);
     }
 }

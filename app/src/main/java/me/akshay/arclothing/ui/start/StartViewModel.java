@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import me.akshay.arclothing.common.response.StringResponse;
+import me.akshay.arclothing.common.response.MainProductResponse;
 
 public class StartViewModel extends ViewModel implements StartRepoCallBack{
-    private final MutableLiveData<StringResponse> settingsLiveData = new MutableLiveData<>();
+    private final MutableLiveData<MainProductResponse> settingsLiveData = new MutableLiveData<>();
     private final MutableLiveData<String> errorMsg = new MutableLiveData<>();
 
-    public LiveData<StringResponse> getSettingsLiveData() {
+    public LiveData<MainProductResponse> getSettingsLiveData() {
         return settingsLiveData;
     }
 
@@ -24,7 +24,7 @@ public class StartViewModel extends ViewModel implements StartRepoCallBack{
     }
 
     @Override
-    public void setValue(StringResponse response) {
+    public void setValue(MainProductResponse response) {
         settingsLiveData.setValue(response);
     }
 }
