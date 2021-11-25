@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import me.akshay.arclothing.R;
-import me.akshay.arclothing.common.response.UserRegistrationResponse;
 import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.ActivityLoginBinding;
@@ -31,7 +30,6 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
     private ActivityLoginBinding binding;
     private LoginViewModel viewModel;
     private LoginRepo repo;
-    private GoogleSignInClient mClient;
     private ActivityResultLauncher<Intent> activityLauncher;
 
     private void initSignInOptions() {
@@ -39,10 +37,14 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         }else {
-            registerForResult();
             initGoogleSignIn();
             initOnClicks();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void initOnClicks() {
@@ -62,6 +64,7 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
 
         StatusBarHelper.getAdaptiveNavBar(this, R.color.start_start);
         UtilityClass.hideSoftInput(this);
+        registerForResult();
         initSignInResults();
         initSignInOptions();
     }
@@ -71,7 +74,6 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
         viewModel.getLoginStatus().observe(this, (flag)->{
             if (flag){
                 //TODO Remove this line
-                Local.setUserLog(LoginActivity.this, new UserRegistrationResponse());
                 initSignInOptions();
                 Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
             }
@@ -119,7 +121,7 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
     }
 
     private void startLogin() {
-        mClient = GoogleSignIn.getClient(this, getBuild(this));
+        GoogleSignInClient mClient = GoogleSignIn.getClient(this, getBuild(this));
         Intent signInIntent = mClient.getSignInIntent();
         activityLauncher.launch(signInIntent);
     }

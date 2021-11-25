@@ -3,6 +3,7 @@ package me.akshay.arclothing.data.preference;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
@@ -57,5 +58,14 @@ public class Local {
         }catch ( NullPointerException e){
             return "";
         }
+    }
+
+    public static void dropUserLog(Context context){
+        FirebaseAuth.getInstance().signOut();
+        SharedPreferences.Editor editor = context.getSharedPreferences(Credentials.BASE, Context.MODE_PRIVATE).edit();
+        editor.putString(PreferenceKeys.USER, "");
+        editor.apply();
+        editor.putBoolean(PreferenceKeys.REGISTRATION, false);
+        editor.apply();
     }
 }

@@ -2,7 +2,6 @@
     <string name="app_name">AR-Shop</string>
 
     <!--    Todo add google sign in key here-->
-    <string name="key">996501100461-a755ilkf3b5diola039iaaa0s5u64oi2.apps.googleusercontent.com</string>
 
     <string name="presented_by">Copyright all rights reserved. This application is part of final year project done at Nagpur Institute Of Technology by students of Computer Science and Technology branch.</string>
     <string name="developer_name">2021 &#8211; 2022</string>

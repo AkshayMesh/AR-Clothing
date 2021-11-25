@@ -65,7 +65,7 @@ public class UtilityClass {
     @NonNull
     public static GoogleSignInOptions getBuild(Context context) {
         return new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(context.getString(R.string.key))
+                .requestIdToken(context.getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
     }

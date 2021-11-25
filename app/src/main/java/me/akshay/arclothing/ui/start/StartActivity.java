@@ -49,6 +49,7 @@ public class StartActivity extends AppCompatActivity implements Observer<StringR
 
         if (NetworkHelper.hasNetworkAccess(this)) {
             //todo remove this line
+//            Local.dropUserLog(this);
 //            checkTimeToFinish(System.currentTimeMillis());
 
 

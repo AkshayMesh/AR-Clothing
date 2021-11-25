@@ -3578,7 +3578,6 @@ string invalid_email_id
 string invalid_email_or_password
 string invalid_otp
 string item_view_role_description
-string key
 string label_account_no
 string label_add_card
 string label_add_money_using

@@ -1690,7 +1690,6 @@
     <string name="invalid_email_or_password">This does not seem to be a valid username and/or password.</string>
     <string name="invalid_otp">Incorrect verification code.</string>
     <string name="item_view_role_description">Tab</string>
-    <string name="key">996501100461-a755ilkf3b5diola039iaaa0s5u64oi2.apps.googleusercontent.com</string>
     <string name="label_account_no">Account No</string>
     <string name="label_add_card">Add Card</string>
     <string name="label_add_money_using">Add money using</string>

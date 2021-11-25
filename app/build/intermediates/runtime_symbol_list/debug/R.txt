@@ -3577,7 +3577,6 @@ int string invalid_email_id 0x7f110114
 int string invalid_email_or_password 0x7f110115
 int string invalid_otp 0x7f110116
 int string item_view_role_description 0x7f110117
-int string key 0x7f110118
 int string label_account_no 0x7f110119
 int string label_add_card 0x7f11011a
 int string label_add_money_using 0x7f11011b
