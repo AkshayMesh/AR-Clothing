@@ -63,7 +63,7 @@ public class Constants {
 
     public interface ParentPath{
         String PRODUCT = "product";
-        String USER = "users";
+        String USER = "user";
     }
 
     public interface Functions{

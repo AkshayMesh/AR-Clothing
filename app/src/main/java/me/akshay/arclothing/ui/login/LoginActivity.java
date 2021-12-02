@@ -21,6 +21,7 @@ import me.akshay.arclothing.R;
 import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.ActivityLoginBinding;
+import me.akshay.arclothing.ui.helper.common.Loader;
 import me.akshay.arclothing.ui.helper.common.StatusBarHelper;
 import me.akshay.arclothing.ui.helper.common.UiHelper.LaunchActivityForResult;
 import me.akshay.arclothing.ui.home.HomeActivity;
@@ -31,6 +32,8 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
     private LoginViewModel viewModel;
     private LoginRepo repo;
     private ActivityResultLauncher<Intent> activityLauncher;
+    private Loader loader;
+    private LoginBottomSheet otpSheet;
 
     private void initSignInOptions() {
         if (Local.getLogStatus(this)){
@@ -59,6 +62,8 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         binding.setLifecycleOwner(this);
         repo  = new LoginRepo(viewModel);
+        loader = new Loader(this);
+        otpSheet = LoginBottomSheet.newInstance(LoginActivity.this);
         binding.setViewModel(viewModel);
         binding.executePendingBindings();
 
@@ -73,22 +78,26 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
 
         viewModel.getLoginStatus().observe(this, (flag)->{
             if (flag){
-                //TODO Remove this line
-                initSignInOptions();
-                Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                if (otpSheet.isVisible())
+                    otpSheet.dismiss();
+                loader.show();
             }
         });
 
         viewModel.getUserSignInResponse().observe(this, (response)->{
+            if (loader.isShowing())
+                loader.stopLoader();
             Local.setUserLog(LoginActivity.this, response);
             initSignInOptions();
         });
         viewModel.getToastMessage().observe(this, (msg)->{
             if (msg!=null)
             Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
+            if (loader.isShowing())
+                loader.stopLoader();
         });
         viewModel.getToken().observe(this, (s)->
-            LoginBottomSheet.newInstance(LoginActivity.this).show(getSupportFragmentManager(), "OTP"));
+            otpSheet.show(getSupportFragmentManager(), "OTP"));
     }
 
     private void initPhoneAuth() {

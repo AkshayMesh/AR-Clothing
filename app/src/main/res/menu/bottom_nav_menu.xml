@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="hardCodedText">
+
+        <item
+            android:id="@+id/home"
+            android:title="Shop"
+            android:icon="@drawable/ic_round_home"/>
+
+        <item
+            android:id="@+id/search"
+            android:title="Search"
+            android:icon="@drawable/ic_round_search"/>
+
+        <item
+            android:id="@+id/wished"
+            android:title="Favorites"
+            android:icon="@drawable/ic_favorite"/>
+
+        <item
+            android:id="@+id/profile"
+            android:title="Profile"
+            android:icon="@drawable/ic_round_person"/>
+
+    </group>
+</menu>

@@ -9,11 +9,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.FragOtpBinding;
 
 public class LoginBottomSheet extends BottomSheetDialogFragment {

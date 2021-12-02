@@ -4,33 +4,32 @@ package me.akshay.arclothing.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.viewpager2.widget.ViewPager2;
 import java.lang.Deprecated;
 import java.lang.Object;
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.ui.home.HomeViewModel;
-import me.relex.circleindicator.CircleIndicator3;
 
 public abstract class ActivityHomeBinding extends ViewDataBinding {
   @NonNull
-  public final ViewPager2 mainPager;
+  public final LayoutBottomNavBinding bottomNav;
 
   @NonNull
-  public final CircleIndicator3 pagerIndicator;
+  public final FrameLayout fragmentContainer;
 
   @Bindable
   protected HomeViewModel mViewModel;
 
   protected ActivityHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ViewPager2 mainPager, CircleIndicator3 pagerIndicator) {
+      LayoutBottomNavBinding bottomNav, FrameLayout fragmentContainer) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.mainPager = mainPager;
-    this.pagerIndicator = pagerIndicator;
+    this.bottomNav = bottomNav;
+    this.fragmentContainer = fragmentContainer;
   }
 
   public abstract void setViewModel(@Nullable HomeViewModel viewModel);

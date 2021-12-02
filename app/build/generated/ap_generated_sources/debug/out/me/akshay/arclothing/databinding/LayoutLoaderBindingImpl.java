@@ -13,7 +13,8 @@ public class LayoutLoaderBindingImpl extends LayoutLoaderBinding  {
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = null;
+        sViewsWithIds = new android.util.SparseIntArray();
+        sViewsWithIds.put(R.id.start_progress, 1);
     }
     // views
     // variables
@@ -22,11 +23,12 @@ public class LayoutLoaderBindingImpl extends LayoutLoaderBinding  {
     // Inverse Binding Event Handlers
 
     public LayoutLoaderBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 1, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));
     }
     private LayoutLoaderBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.RelativeLayout) bindings[0]
+            , (com.airbnb.lottie.LottieAnimationView) bindings[1]
             );
         this.pbarContainer.setTag(null);
         setRootTag(root);

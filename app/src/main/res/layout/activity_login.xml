@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="@string/login_text"
-                android:textColor="@color/semi_black" />
+                android:textColor="@color/colorGrey" />
 
             <LinearLayout
                 android:layout_width="match_parent"

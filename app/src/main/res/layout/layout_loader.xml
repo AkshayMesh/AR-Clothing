@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:id="@+id/pbar_container"
+        android:gravity="center"
         style="@style/ProgressBarContainer">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/start_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true"
+            android:transitionName="@string/title_transition"/>
     </RelativeLayout>
 </layout>

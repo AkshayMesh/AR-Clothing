@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:id="@+id/layout_product_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button_buy_now"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/buy_now"
+            android:textColor="@color/colorPrimary"
+            android:backgroundTint="@color/white"/>
+
+        <Button
+            android:id="@+id/fab_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="@string/add_cart"
+            android:drawableStart="@drawable/ic_action_cart"
+            android:backgroundTint="@color/colorPrimary" />
+    </LinearLayout>
+</layout>

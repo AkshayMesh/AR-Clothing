@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="featureModel"
+            type="me.akshay.arclothing.common.models.ProductModel" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_gravity="center"
+        android:background="@null">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardUseCompatPadding="true"
+            card_view:cardElevation="4dp"
+            card_view:cardCornerRadius="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:clipToPadding="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_grid_product_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="168dp"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        card_view:cardElevation="2dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="8dp"
+                        card_view:cardCornerRadius="50dp"
+                        card_view:cardBackgroundColor="@color/white">
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        tools:text="TextView"
+                        android:text="@{featureModel.title}" />
+
+                    <TextView
+                        android:id="@+id/tv_grid_product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_title"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/tv_grid_product_Previous_price_right"
+                        tools:text="3276/-"
+                        android:text="@{String.valueOf(featureModel.currentPrice)}" />
+                    <TextView
+                        android:id="@+id/tv_grid_product_Previous_price_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_title"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/text_strike_through"
+                        android:textColor="@color/colorGrey"
+                        android:textSize="10sp"
+                        tools:text="4000"
+                        android:text="@{String.valueOf(featureModel.previousPrice)}"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

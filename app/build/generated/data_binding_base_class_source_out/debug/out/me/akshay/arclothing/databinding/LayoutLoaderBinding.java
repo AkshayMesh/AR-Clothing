@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.airbnb.lottie.LottieAnimationView;
 import java.lang.Deprecated;
 import java.lang.Object;
 import me.akshay.arclothing.R;
@@ -17,10 +18,14 @@ public abstract class LayoutLoaderBinding extends ViewDataBinding {
   @NonNull
   public final RelativeLayout pbarContainer;
 
+  @NonNull
+  public final LottieAnimationView startProgress;
+
   protected LayoutLoaderBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RelativeLayout pbarContainer) {
+      RelativeLayout pbarContainer, LottieAnimationView startProgress) {
     super(_bindingComponent, _root, _localFieldCount);
     this.pbarContainer = pbarContainer;
+    this.startProgress = startProgress;
   }
 
   @NonNull

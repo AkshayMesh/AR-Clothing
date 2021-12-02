@@ -14,12 +14,12 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.main_pager, 1);
-        sViewsWithIds.put(R.id.pager_indicator, 2);
+        sViewsWithIds.put(R.id.bottom_nav, 1);
+        sViewsWithIds.put(R.id.fragment_container, 2);
     }
     // views
     @NonNull
-    private final androidx.core.widget.NestedScrollView mboundView0;
+    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     // values
     // listeners
@@ -30,10 +30,10 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
     }
     private ActivityHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.viewpager2.widget.ViewPager2) bindings[1]
-            , (me.relex.circleindicator.CircleIndicator3) bindings[2]
+            , (bindings[1] != null) ? me.akshay.arclothing.databinding.LayoutBottomNavBinding.bind((android.view.View) bindings[1]) : null
+            , (android.widget.FrameLayout) bindings[2]
             );
-        this.mboundView0 = (androidx.core.widget.NestedScrollView) bindings[0];
+        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

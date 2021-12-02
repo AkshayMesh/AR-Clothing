@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AR-Shop</string>
+    <string name="app_name">Virtual-Clothing</string>
 
     <!--    Todo add google sign in key here-->
 
@@ -8,12 +8,14 @@
 
     <!--Transition names-->
     <string name="title_transition">title</string>
+    <string name="input_state">sliders</string>
 
     <!--Content Description-->
     <string name="common_desc">AppLogoImage</string>
 
     <!--grammar-->
     <string name="coma">,</string>
+    <string name="zero_text">0</string>
 
     <!--Login UI-->
     <string name="welcome_string">Welcome to,</string>
@@ -22,6 +24,22 @@
     <string name="enter_your_number">Enter your number</string>
     <string name="login_text">Login to enjoy all our services</string>
     <string name="or">or</string>
+    <string name="need_sign_in">You need to sign in for this action!</string>
     <string name="digits6">000000</string>
     <string name="enter_otp">Enter OTP</string>
+
+    <!--HOMEPAGE-->
+    <string name="category">Category</string>
+    <string name="top_offers">Top Offers</string>
+    <string name="popular_products">Popular Products</string>
+    <string name="feature_product">Feature Products</string>
+    <string name="image_view_description">description</string>
+
+    <!--PRODUCT DETAILS-->
+    <string name="product_details_title">Product Details</string>
+    <string name="retry">Retry</string>
+    <string name="no_internet_connect">No Interrnet Connection</string>
+    <string name="you_may_be_interested_in">You may also like</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="add_cart">Add to cart</string>
 </resources>

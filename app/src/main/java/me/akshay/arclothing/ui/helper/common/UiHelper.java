@@ -1,5 +1,6 @@
 package me.akshay.arclothing.ui.helper.common;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.TypedValue;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.BindingAdapter;
 
@@ -16,6 +18,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.sql.Date;
+
+import me.akshay.arclothing.R;
+import me.akshay.arclothing.ui.home.HomeActivity;
+import me.akshay.arclothing.ui.login.LoginActivity;
 
 public class UiHelper {
 
@@ -70,6 +76,19 @@ public class UiHelper {
     }
 
     /**
+     * if user is not register than this signin pop up will show
+     */
+    public static void openSignInPopUp(Activity activity) {
+        new AlertDialog.Builder(activity)
+                .setMessage(activity.getString(R.string.need_sign_in))
+                .setPositiveButton(android.R.string.yes, (dialog, whichButton) -> {
+                    Intent intentLogin = new Intent(activity, LoginActivity.class);
+                    activity.startActivity(intentLogin);
+                })
+                .setNegativeButton(android.R.string.no, null).show();
+    }
+
+    /**
      * abstract class for Launch Activity for some results
      */
     public static abstract class LaunchActivityForResult{
@@ -78,6 +97,10 @@ public class UiHelper {
             return activity.registerForActivityResult(
                     new ActivityResultContracts.StartActivityForResult(), this::onResult);
         }
+    }
+
+    public static void setUrlToImageView(Context context, ImageView view, String url){
+        Glide.with(context).load(url).placeholder(R.mipmap.ic_launcher_foreground).into(view);
     }
 
     public static int dpToPx(float dp, Context context) {

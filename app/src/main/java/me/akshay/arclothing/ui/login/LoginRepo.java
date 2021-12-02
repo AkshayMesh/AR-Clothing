@@ -94,21 +94,12 @@ public class LoginRepo {
         }
     }
 
-
-    private Call<UserRegistrationResponse> registerViaPhone() {
-        return RetrofitClient.getApiService().setUserViaPhone(API_TOKEN, accountToken, account.loginType);
-    }
-
-    private Call<UserRegistrationResponse> registerViaGoogle(){
-        return RetrofitClient.getApiService().setUserViaGoogle(API_TOKEN, account.userfullname, account.userprofilepath, account.useremail, account.loginType);
-    }
-
     private void firebaseAuthWithGoogleAccount(GoogleSignInAccount account) {
         this.account = new UserRegistrationInfo();
         this.account.loginType = GOOGLE_LOGIN;
-        this.account.useremail = account.getEmail();
-        this.account.userfullname = account.getDisplayName();
-        this.account.userprofilepath = account.getPhotoUrl()!=null ? account.getPhotoUrl().toString() : "";
+        this.account.email = account.getEmail();
+        this.account.username = account.getDisplayName();
+        this.account.profile_url = account.getPhotoUrl()!=null ? account.getPhotoUrl().toString() : "";
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         signInWithCredential(credential, true);
     }
@@ -128,6 +119,14 @@ public class LoginRepo {
                         }
                     }
                 });
+    }
+
+    private Call<UserRegistrationResponse> registerViaPhone() {
+        return RetrofitClient.getApiService().setUserViaPhone(API_TOKEN, accountToken, account.loginType);
+    }
+
+    private Call<UserRegistrationResponse> registerViaGoogle(){
+        return RetrofitClient.getApiService().setUserViaGoogle(API_TOKEN, account.username, account.profile_url, account.email, account.loginType);
     }
 
     private void registerToServer(boolean hasAccount) {

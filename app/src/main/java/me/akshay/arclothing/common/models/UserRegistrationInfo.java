@@ -6,30 +6,37 @@ import com.google.gson.annotations.SerializedName;
 public class UserRegistrationInfo {
 
     public String dateLogin;
+
     public String status;
+
+    @SerializedName("login_type")
+    @Expose
     public String loginType;
+
+    @SerializedName("date_created")
+    @Expose
     public String dateCreated;
 
     public UserRegistrationInfo() {}
 
-    @SerializedName("id")
+    @SerializedName("prk_id")
     @Expose
     public String id;
 
-    @SerializedName("userfullname")
+    @SerializedName("username")
     @Expose
-    public String userfullname;
+    public String username;
 
-    @SerializedName("userprofilepath")
+    @SerializedName("profile_url")
     @Expose
-    public String userprofilepath;
+    public String profile_url;
 
-    @SerializedName("usermobileno")
+    @SerializedName("mobile_no")
     @Expose
-    public String usermobileno;
+    public String mobile_no;
 
-    @SerializedName("useremail")
+    @SerializedName("email")
     @Expose
-    public String useremail;
+    public String email;
 
 }

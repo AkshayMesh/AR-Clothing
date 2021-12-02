@@ -1,53 +1,85 @@
 package me.akshay.arclothing.ui.home;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import me.akshay.arclothing.R;
+import me.akshay.arclothing.data.preference.Local;
+import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.ActivityHomeBinding;
-import me.akshay.arclothing.databinding.ActivityLoginBinding;
-import me.akshay.arclothing.ui.login.LoginViewModel;
+import me.akshay.arclothing.ui.dashboard.DashboardFragment;
+import me.akshay.arclothing.ui.helper.common.StatusBarHelper;
+import me.akshay.arclothing.ui.helper.common.UiHelper;
+import me.akshay.arclothing.ui.login.LoginActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
     private ActivityHomeBinding binding;
     private HomeViewModel viewModel;
+    private HomeRepo repo;
+    private boolean isRegistered;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
+        viewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        binding.setLifecycleOwner(this);
         binding.setViewModel(viewModel);
         binding.executePendingBindings();
+        repo  = new HomeRepo(viewModel);
+        isRegistered = Local.getLogStatus(this);
+
+        initActivity();
+        initBottomNav();
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+    @SuppressLint("NonConstantResourceId")
+    private void initBottomNav() {
+        binding.bottomNav.bottomNav.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.search:
+//                    startActivity(new Intent(HomeActivity.this, SearchActivity.class));
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                case R.id.wished:
+                    if (isRegistered){
+//                        startActivity(new Intent(HomeActivity.this, UserFavActivity.class));
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    }else {
+                        UiHelper.openSignInPopUp(HomeActivity.this);
+                    }
+                case R.id.profile:
+                    if (isRegistered){
+//                        startActivity(new Intent(HomeActivity.this, UserDetailActivity.class));
+                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    }else {
+                        UiHelper.openSignInPopUp(HomeActivity.this);
+                    }
+                    break;
+            }
             return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        });
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        return super.onSupportNavigateUp();
+    protected void onResume() {
+        super.onResume();
+        isRegistered = Local.getLogStatus(this);
+        if (!isRegistered){
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
+    }
+
+    private void initActivity() {
+        StatusBarHelper.getAdaptiveNavBar(this, R.color.colorPrimary);
+        UtilityClass.hideSoftInput(this);
+        UtilityClass.commitFragment(this, binding.fragmentContainer.getId(), new DashboardFragment());
     }
 }

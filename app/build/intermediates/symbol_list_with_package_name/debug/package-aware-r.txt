@@ -1268,6 +1268,7 @@ color checkbox_themeable_attribute_color
 color circle_indicator
 color clouds
 color colorAccent
+color colorGrey
 color colorPrimary
 color colorPrimaryDark
 color color_13
@@ -1362,6 +1363,7 @@ color index_text_color
 color input_glow
 color input_glow_hidden
 color input_gray
+color lightWhite
 color light_blue
 color light_gray
 color light_grey
@@ -2098,6 +2100,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable axis_logo
 drawable background_drawable
+drawable bg_progress_bar
 drawable bg_rounded_grey_border
 drawable bg_rounded_search_view
 drawable bg_rounded_white
@@ -2121,6 +2124,8 @@ drawable cb_ic_vpa_verified
 drawable cb_payu_close_grey
 drawable cb_progress_bar
 drawable cb_rectangle_round
+drawable circle_bg
+drawable circle_border_bg_1
 drawable citi
 drawable close
 drawable common_full_open_on_phone
@@ -2158,18 +2163,26 @@ drawable googleg_standard_color_18
 drawable hdfc_bank
 drawable hourglass
 drawable hsbc
+drawable ic_action_cart
 drawable ic_action_delete
+drawable ic_back
 drawable ic_check_circle_black_48dp
 drawable ic_clock_black_24dp
 drawable ic_done_black_24dp
 drawable ic_enter_vpa_active
+drawable ic_favorite
 drawable ic_info_black
 drawable ic_keyboard_black_24dp
 drawable ic_lock
+drawable ic_menu_share
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_round_home
+drawable ic_round_person
+drawable ic_round_search
+drawable ic_shopping_bags
 drawable ic_txn_done
 drawable ic_txn_fail
 drawable ic_wallet_small
@@ -2207,6 +2220,7 @@ drawable mtrl_navigation_bar_item_background
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
+drawable nav_select
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_animation
@@ -2246,6 +2260,8 @@ drawable snooze22
 drawable start_gredient
 drawable surepay_logo
 drawable test_custom_background
+drawable text_strike_through
+drawable text_stroke
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transaction_successful
@@ -2326,7 +2342,6 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -2353,6 +2368,7 @@ id animateToStart
 id antiClockwise
 id anticipate
 id anticipateOvershoot
+id appBarLayout
 id app_name_tv
 id approve
 id arc
@@ -2376,6 +2392,7 @@ id bestChoice
 id blocking
 id bottom
 id bottom_layout
+id bottom_nav
 id bounce
 id bounceBoth
 id bounceEnd
@@ -2394,12 +2411,15 @@ id btn_pay_quick_pay_emi
 id btn_review_order_go_back
 id btn_webview_review_order
 id buttonPanel
+id button_buy_now
 id button_cancel_transaction
 id button_go_back_snooze
 id button_login
+id button_retry
 id button_retry_anyway
 id button_retry_transaction
 id button_snooze_transaction
+id c_view
 id cache_measures
 id cancel_action
 id cancel_button
@@ -2410,6 +2430,8 @@ id card_cardNumber
 id card_cardType_image
 id card_type
 id carryVelocity
+id cart_iv
+id cart_tv
 id cb_blank_overlay
 id cb_emi_tenure
 id cb_progressbar
@@ -2449,8 +2471,10 @@ id convenience_fee_amount
 id convenience_fee_title
 id coordinator
 id cos
+id count_card
 id counterclockwise
 id currentState
+id current_price
 id custom
 id customPanel
 id custom_toolbar
@@ -2535,9 +2559,11 @@ id expandableLayout4
 id expandableLayout5
 id expandableLayout6
 id expanded_menu
+id fab_cart
 id fade
 id fastOutLinearIn
 id fastOutSlowIn
+id fav_card
 id fifthOuterCircle
 id fill
 id fill_horizontal
@@ -2550,6 +2576,7 @@ id flip
 id floating
 id forever
 id forthOuterCircle
+id fragment_container
 id fragment_container_view_tag
 id frost
 id ghost_view
@@ -2562,7 +2589,6 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
-id grp_tv
 id guideline
 id hardware
 id head_text
@@ -2612,20 +2638,33 @@ id item3
 id item4
 id item_touch_helper_previous_elevation
 id ivVpaSuccess
+id iv_grid_product_image
+id iv_product_image
+id iv_slider_image
 id jumpToEnd
 id jumpToStart
 id l_convenience_fee
 id l_nativebutton
 id labeled
 id layout
+id layout_add
+id layout_buy
+id layout_buy_now
 id layout_cardView_header
 id layout_card_bankName
 id layout_emi_header
 id layout_get_bank_list
+id layout_image
+id layout_include_no_net
+id layout_interest_product
+id layout_interested_product
 id layout_netBankView_header
+id layout_product_details
 id layout_saved_item_add_new_card
+id layout_slider_main_dots
 id layout_third_party_wallets_header
 id layout_upi_header
+id layout_view_pager_image
 id layout_wallet_view_saved_banks
 id layout_wallet_view_saved_card
 id layout_wallet_view_third_party_wallets
@@ -2641,6 +2680,7 @@ id linear
 id linearLayout
 id linearOutSlowIn
 id linear_layout_waiting_for_otp
+id linear_no_internet
 id listMode
 id list_item
 id llPayment
@@ -2659,7 +2699,6 @@ id logo
 id lottie_layer_name
 id magic_retry_container
 id main_frame
-id main_pager
 id masked
 id match_constraint
 id match_parent
@@ -2781,8 +2820,11 @@ id pin_layout_gone
 id plastic
 id position
 id postLayout
+id prev_price
+id profile
 id progress
 id progressBar2
+id progress_bar
 id progress_circular
 id progress_horizontal
 id quick_pay_balance
@@ -2793,10 +2835,12 @@ id radio
 id ratio
 id rectangles
 id recycler_view
+id recycler_view_interest
 id recycler_view_review_orders
 id regenerate_layout
 id regenerate_text
 id rel_layout_bank_name
+id relative_layout
 id restart
 id retry
 id retry_text
@@ -2813,6 +2857,9 @@ id rlInputVpa
 id rounded
 id row_index_key
 id rvApps
+id rv_feature_product
+id rv_p_detail_product_grid
+id rv_popular_product
 id s_payu_review_details
 id same_level
 id save_non_transition_alpha
@@ -2831,7 +2878,9 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollView_pum_fragment
+id scroll_view
 id scrollable
+id search
 id search_badge
 id search_bar
 id search_button
@@ -2846,6 +2895,7 @@ id secondOuterCircle
 id select_dialog_listview
 id selected
 id selection_type
+id share_iv
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -2939,14 +2989,21 @@ id textWatcher
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_layout
 id text_or
 id text_view_ac_debited_twice
 id text_view_cancel_snooze_window
+id text_view_featured_products
+id text_view_no_net
+id text_view_popular_product
+id text_view_product_description
+id text_view_recent_products
 id text_view_resend_otp
 id text_view_retry_message_detail
 id text_view_snooze_header
 id text_view_snooze_message
 id text_view_snooze_slow_user_header
+id text_view_title
 id text_view_transaction_snoozed_message1
 id textinput_counter
 id textinput_error
@@ -2968,6 +3025,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
+id toolbar_logo
 id toolbar_review_order_screen
 id top
 id topPanel
@@ -2999,7 +3057,15 @@ id tv_error_card_number
 id tv_error_cvv
 id tv_error_expiry_date
 id tv_get_otp
+id tv_grid_product_Previous_price
+id tv_grid_product_Previous_price_right
+id tv_grid_product_heading
+id tv_grid_product_price
+id tv_offer_percent
 id tv_show_wallet_details
+id tv_slider_heading
+id tv_slider_preheading
+id tv_title
 id tv_vpa_submit
 id tv_webview_review_order_title
 id txt_layout_otp
@@ -3021,6 +3087,7 @@ id vertical_only
 id view
 id view_more_bank
 id view_offset_helper
+id view_pager
 id view_transition
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -3028,6 +3095,7 @@ id view_tree_view_model_store_owner
 id viewpager_saved_card
 id visible
 id visible_removing_fragment_view_tag
+id vp_slider_main
 id waiting
 id wallet_layout
 id wallet_view_login_layout
@@ -3035,6 +3103,7 @@ id web_view
 id webview
 id west
 id wide
+id wished
 id withText
 id withinBounds
 id wrap
@@ -3129,10 +3198,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout about_product
 layout activity_citrus_ui
 layout activity_home
 layout activity_login
 layout activity_payment_response
+layout activity_product_details
 layout activity_review_order
 layout activity_start
 layout add_new_card_item
@@ -3177,7 +3248,9 @@ layout emi_tenure_layout
 layout emi_tenure_layout_header
 layout emi_tenure_screen
 layout footer_checkout_layout
+layout frag_dashboard
 layout frag_otp
+layout frag_slider_main
 layout fragment_add_card_fragment_emi
 layout fragment_add_card_fragment_new
 layout fragment_bank_list
@@ -3186,7 +3259,15 @@ layout fragment_pay_umoney
 layout fragment_result_new
 layout fragment_review_order
 layout fragment_validate_wallet
+layout item_fearure_product
+layout item_offer_product
+layout item_product
+layout layout_bottom_nav
+layout layout_interest_product
 layout layout_loader
+layout layout_no_internet
+layout layout_product_actions
+layout layout_product_details
 layout layout_terms_condition
 layout material_chip_input_combo
 layout material_clock_display
@@ -3289,9 +3370,9 @@ layout wallet_view_saved_card_layout
 layout wallet_view_third_party_wallets_layout
 layout wallet_view_upi_layout
 layout wallet_view_user_wallet_layout
+menu bottom_nav_menu
 menu example_menu
 menu example_menu2
-menu menu_main
 menu review_order_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
@@ -3330,6 +3411,7 @@ string abc_toolbar_collapse_description
 string add_amount
 string add_card_success_header
 string add_card_suucess_msg
+string add_cart
 string add_money_option_disable
 string app_name
 string appbar_scrolling_view_behavior
@@ -3357,6 +3439,8 @@ string btn_ok
 string btn_proceed
 string btn_save
 string btn_save_cahnges
+string buy_now
+string category
 string cb_ac_debited_twice
 string cb_approve_otp
 string cb_authenticate_with
@@ -3553,6 +3637,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fcm_fallback_notification_channel_label
+string feature_product
 string forgot_password
 string gcm_defaultSenderId
 string get_otp
@@ -3572,6 +3657,8 @@ string hint_enter_withdraw_amount
 string hint_ifsc_code
 string hint_vpa
 string icon_content_description
+string image_view_description
+string input_state
 string international_card_type_not_supported_message
 string internet_restored
 string invalid_email_id
@@ -3720,6 +3807,8 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string need_sign_in
+string no_internet_connect
 string no_internet_connection
 string no_internet_connection_try_later
 string or
@@ -3762,8 +3851,10 @@ string plus_2000
 string plus_500
 string pnp_amount_text
 string pnp_hint_vpa
+string popular_products
 string presented_by
 string proceed_to_pay
+string product_details_title
 string progrees_msg_deactivating_autoload
 string progrees_msg_logging_user
 string progrees_msg_processing
@@ -3785,6 +3876,7 @@ string quickpay_msg_all_section_disabled
 string redirect_back_to_merchant
 string resend_otp
 string resuming_your_transaction
+string retry
 string review_order_conv_fee_msg
 string review_order_default_text
 string review_order_details
@@ -3826,6 +3918,7 @@ string text_withdraw_success
 string title_activity_citrus
 string title_transition
 string toast_insufficient_balance_in_wallet
+string top_offers
 string total
 string transaction_response_msg
 string transaction_response_withdraw_msg
@@ -3846,6 +3939,8 @@ string withdraw_account_update
 string withdraw_money_to
 string withdraw_more_than_wallet_amount_msg
 string you_are_attempting_to_use_a_card_issued_outside_india
+string you_may_be_interested_in
+string zero_text
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AlertDialogAnimation
@@ -4787,7 +4882,6 @@ styleable customTextView bg_color textStyle
 styleable expandableLayout ael_defaultChildIndex ael_defaultPosition ael_duration ael_expanded ael_interpolator ael_orientation
 styleable include constraintSet
 styleable prefixEditText prefix_color prefix_string
-xml activity_splash_scene
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

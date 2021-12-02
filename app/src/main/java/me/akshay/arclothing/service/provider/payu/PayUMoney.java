@@ -43,9 +43,9 @@ abstract public class PayUMoney {
 
     public void getUserDetails(){
         UserRegistrationInfo urInfo = Local.getUserLog(mContext).userRegistrationInfo;
-        userMail = urInfo.useremail;
-        userName = urInfo.userfullname;
-        userNumber = urInfo.usermobileno;
+        userMail = urInfo.email;
+        userName = urInfo.username;
+        userNumber = urInfo.mobile_no;
 //        getTransactionId();
     }
 

@@ -45,7 +45,7 @@ public class StartRepo {
             @Override
             public void onFailure(@NonNull Call<MainProductResponse> call, @NonNull Throwable t) {
                 Log.e("Setting Response", t.getMessage());
-                callBack.setValue("Unable to get settings");
+                callBack.setValue("Unable to configure settings");
             }
         });
     }
