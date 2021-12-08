@@ -1,5 +1,7 @@
 package me.akshay.arclothing.ui.helper.common;
 
+import static me.akshay.arclothing.common.index.Constants.ServerUrl.FULL_IMAGE_URL;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -100,7 +102,7 @@ public class UiHelper {
     }
 
     public static void setUrlToImageView(Context context, ImageView view, String url){
-        Glide.with(context).load(url).placeholder(R.mipmap.ic_launcher_foreground).into(view);
+        Glide.with(context).load(FULL_IMAGE_URL+url).placeholder(R.mipmap.ic_launcher_foreground).into(view);
     }
 
     public static int dpToPx(float dp, Context context) {

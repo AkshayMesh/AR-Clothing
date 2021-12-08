@@ -9,7 +9,7 @@ import java.util.List;
 public class DataModel {
     @SerializedName("slider")
     @Expose
-    public ArrayList<SliderMain> mSliderMains;
+    public ArrayList<SliderModel> mSliderModels;
 
     @SerializedName("category")
     @Expose

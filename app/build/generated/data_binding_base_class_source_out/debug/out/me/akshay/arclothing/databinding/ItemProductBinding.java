@@ -14,7 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import java.lang.Deprecated;
 import java.lang.Object;
 import me.akshay.arclothing.R;
-import me.akshay.arclothing.common.models.ProductModel;
+import me.akshay.arclothing.ui.dashboard.DashboardViewModel;
 
 public abstract class ItemProductBinding extends ViewDataBinding {
   @NonNull
@@ -33,7 +33,7 @@ public abstract class ItemProductBinding extends ViewDataBinding {
   public final TextView tvGridProductPrice;
 
   @Bindable
-  protected ProductModel mModel;
+  protected DashboardViewModel mModel;
 
   protected ItemProductBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView ivProductImage, TextView textViewProductDescription, TextView tvGridProductHeading,
@@ -46,10 +46,10 @@ public abstract class ItemProductBinding extends ViewDataBinding {
     this.tvGridProductPrice = tvGridProductPrice;
   }
 
-  public abstract void setModel(@Nullable ProductModel model);
+  public abstract void setModel(@Nullable DashboardViewModel model);
 
   @Nullable
-  public ProductModel getModel() {
+  public DashboardViewModel getModel() {
     return mModel;
   }
 

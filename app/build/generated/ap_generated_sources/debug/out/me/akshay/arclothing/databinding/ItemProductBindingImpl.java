@@ -14,11 +14,7 @@ public class ItemProductBindingImpl extends ItemProductBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.iv_product_image, 1);
-        sViewsWithIds.put(R.id.tv_grid_product_heading, 2);
-        sViewsWithIds.put(R.id.text_view_product_description, 3);
-        sViewsWithIds.put(R.id.tv_grid_product_price, 4);
-        sViewsWithIds.put(R.id.tv_grid_product_Previous_price, 5);
+        sViewsWithIds.put(R.id.iv_product_image, 5);
     }
     // views
     @NonNull
@@ -33,14 +29,18 @@ public class ItemProductBindingImpl extends ItemProductBinding  {
     }
     private ItemProductBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[1]
-            , (android.widget.TextView) bindings[3]
+            , (android.widget.ImageView) bindings[5]
             , (android.widget.TextView) bindings[2]
-            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[1]
             , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[3]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.textViewProductDescription.setTag(null);
+        this.tvGridProductHeading.setTag(null);
+        this.tvGridProductPreviousPrice.setTag(null);
+        this.tvGridProductPrice.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -68,7 +68,7 @@ public class ItemProductBindingImpl extends ItemProductBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.model == variableId) {
-            setModel((me.akshay.arclothing.common.models.ProductModel) variable);
+            setModel((me.akshay.arclothing.ui.dashboard.DashboardViewModel) variable);
         }
         else {
             variableSet = false;
@@ -76,8 +76,13 @@ public class ItemProductBindingImpl extends ItemProductBinding  {
             return variableSet;
     }
 
-    public void setModel(@Nullable me.akshay.arclothing.common.models.ProductModel Model) {
+    public void setModel(@Nullable me.akshay.arclothing.ui.dashboard.DashboardViewModel Model) {
         this.mModel = Model;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.model);
+        super.requestRebind();
     }
 
     @Override
@@ -94,7 +99,36 @@ public class ItemProductBindingImpl extends ItemProductBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        me.akshay.arclothing.ui.dashboard.DashboardViewModel model = mModel;
+        java.lang.String modelTitle = null;
+        java.lang.String modelPreviousPrice = null;
+        java.lang.String modelCurrentPrice = null;
+        java.lang.String modelDescription = null;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (model != null) {
+                    // read model.title
+                    modelTitle = model.title;
+                    // read model.previousPrice
+                    modelPreviousPrice = model.previousPrice;
+                    // read model.currentPrice
+                    modelCurrentPrice = model.currentPrice;
+                    // read model.description
+                    modelDescription = model.description;
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textViewProductDescription, modelDescription);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvGridProductHeading, modelTitle);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvGridProductPreviousPrice, modelPreviousPrice);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvGridProductPrice, modelCurrentPrice);
+        }
     }
     // Listener Stub Implementations
     // callback impls

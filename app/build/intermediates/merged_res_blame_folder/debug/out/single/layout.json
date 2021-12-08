@@ -36,6 +36,10 @@
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\layout_bottom_nav.xml"
     },
     {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_related.xml",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\item_related.xml"
+    },
+    {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\frag_dashboard.xml",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\frag_dashboard.xml"
     },

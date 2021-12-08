@@ -108,6 +108,10 @@
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_cart.xml.flat",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\drawable\\ic_cart.xml"
+    },
+    {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\drawable_circle_border_bg_1.xml.flat",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\drawable\\circle_border_bg_1.xml"
     },
@@ -194,6 +198,10 @@
     {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_back.xml.flat",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_item_related.xml.flat",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\item_related.xml"
     },
     {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_right_curve.xml.flat",

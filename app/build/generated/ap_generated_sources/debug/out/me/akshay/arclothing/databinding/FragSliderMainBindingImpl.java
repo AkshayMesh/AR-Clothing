@@ -64,7 +64,7 @@ public class FragSliderMainBindingImpl extends FragSliderMainBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.model == variableId) {
-            setModel((me.akshay.arclothing.common.models.SliderMain) variable);
+            setModel((me.akshay.arclothing.common.models.SliderModel) variable);
         }
         else {
             variableSet = false;
@@ -72,7 +72,7 @@ public class FragSliderMainBindingImpl extends FragSliderMainBinding  {
             return variableSet;
     }
 
-    public void setModel(@Nullable me.akshay.arclothing.common.models.SliderMain Model) {
+    public void setModel(@Nullable me.akshay.arclothing.common.models.SliderModel Model) {
         this.mModel = Model;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -95,7 +95,7 @@ public class FragSliderMainBindingImpl extends FragSliderMainBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        me.akshay.arclothing.common.models.SliderMain model = mModel;
+        me.akshay.arclothing.common.models.SliderModel model = mModel;
         java.lang.String modelGetPreHeading = null;
         java.lang.String modelGetHeading = null;
 

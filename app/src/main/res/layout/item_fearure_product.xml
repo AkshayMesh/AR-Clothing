@@ -3,7 +3,7 @@
     <data>
         <variable
             name="featureModel"
-            type="me.akshay.arclothing.common.models.ProductModel" />
+            type="me.akshay.arclothing.ui.dashboard.DashboardViewModel" />
     </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -14,7 +14,7 @@
         android:background="@null">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
+            android:layout_width="115dp"
             android:layout_height="wrap_content"
             card_view:cardBackgroundColor="@color/white"
             card_view:cardUseCompatPadding="true"
@@ -34,9 +34,9 @@
                     <ImageView
                         android:id="@+id/iv_grid_product_image"
                         android:layout_width="match_parent"
-                        android:layout_height="168dp"
-                        android:scaleType="centerCrop"
-                        android:adjustViewBounds="true"/>
+                        android:layout_height="130dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop" />
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
@@ -67,9 +67,10 @@
                         android:layout_marginBottom="2dp"
                         android:ellipsize="end"
                         android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:text="@{featureModel.title}"
                         android:textSize="12sp"
-                        tools:text="TextView"
-                        android:text="@{featureModel.title}" />
+                        tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/tv_grid_product_price"
@@ -81,7 +82,7 @@
                         android:layout_marginStart="4dp"
                         android:layout_toEndOf="@+id/tv_grid_product_Previous_price_right"
                         tools:text="3276/-"
-                        android:text="@{String.valueOf(featureModel.currentPrice)}" />
+                        android:text="@{featureModel.currentPrice}" />
                     <TextView
                         android:id="@+id/tv_grid_product_Previous_price_right"
                         android:layout_width="wrap_content"
@@ -92,7 +93,7 @@
                         android:textColor="@color/colorGrey"
                         android:textSize="10sp"
                         tools:text="4000"
-                        android:text="@{String.valueOf(featureModel.previousPrice)}"/>
+                        android:text="@{featureModel.previousPrice}"/>
                 </RelativeLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

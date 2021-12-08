@@ -66,7 +66,7 @@ public class ItemFearureProductBindingImpl extends ItemFearureProductBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.featureModel == variableId) {
-            setFeatureModel((me.akshay.arclothing.common.models.ProductModel) variable);
+            setFeatureModel((me.akshay.arclothing.ui.dashboard.DashboardViewModel) variable);
         }
         else {
             variableSet = false;
@@ -74,7 +74,7 @@ public class ItemFearureProductBindingImpl extends ItemFearureProductBinding  {
             return variableSet;
     }
 
-    public void setFeatureModel(@Nullable me.akshay.arclothing.common.models.ProductModel FeatureModel) {
+    public void setFeatureModel(@Nullable me.akshay.arclothing.ui.dashboard.DashboardViewModel FeatureModel) {
         this.mFeatureModel = FeatureModel;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -97,12 +97,10 @@ public class ItemFearureProductBindingImpl extends ItemFearureProductBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String stringValueOfFeatureModelPreviousPrice = null;
-        float featureModelCurrentPrice = 0f;
-        float featureModelPreviousPrice = 0f;
+        java.lang.String featureModelCurrentPrice = null;
+        java.lang.String featureModelPreviousPrice = null;
         java.lang.String featureModelTitle = null;
-        java.lang.String stringValueOfFeatureModelCurrentPrice = null;
-        me.akshay.arclothing.common.models.ProductModel featureModel = mFeatureModel;
+        me.akshay.arclothing.ui.dashboard.DashboardViewModel featureModel = mFeatureModel;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
@@ -116,19 +114,13 @@ public class ItemFearureProductBindingImpl extends ItemFearureProductBinding  {
                     // read featureModel.title
                     featureModelTitle = featureModel.title;
                 }
-
-
-                // read String.valueOf(featureModel.currentPrice)
-                stringValueOfFeatureModelCurrentPrice = java.lang.String.valueOf(featureModelCurrentPrice);
-                // read String.valueOf(featureModel.previousPrice)
-                stringValueOfFeatureModelPreviousPrice = java.lang.String.valueOf(featureModelPreviousPrice);
         }
         // batch finished
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvGridProductPreviousPriceRight, stringValueOfFeatureModelPreviousPrice);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvGridProductPrice, stringValueOfFeatureModelCurrentPrice);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvGridProductPreviousPriceRight, featureModelPreviousPrice);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvGridProductPrice, featureModelCurrentPrice);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvTitle, featureModelTitle);
         }
     }

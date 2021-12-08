@@ -4,10 +4,14 @@ import static me.akshay.arclothing.common.index.Constants.Extensions.PHP;
 import static me.akshay.arclothing.common.index.Constants.Fields.COMMON_FIELD;
 import static me.akshay.arclothing.common.index.Constants.Functions.ADD;
 import static me.akshay.arclothing.common.index.Constants.Functions.ALL;
+import static me.akshay.arclothing.common.index.Constants.ParentPath.CATS;
 import static me.akshay.arclothing.common.index.Constants.ParentPath.PRODUCT;
+import static me.akshay.arclothing.common.index.Constants.ParentPath.SLIDER;
 import static me.akshay.arclothing.common.index.Constants.ParentPath.USER;
 
+import me.akshay.arclothing.common.response.CategoryResponse;
 import me.akshay.arclothing.common.response.MainProductResponse;
+import me.akshay.arclothing.common.response.SliderResponse;
 import me.akshay.arclothing.common.response.UserRegistrationResponse;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -17,7 +21,15 @@ import retrofit2.http.POST;
 public interface ApiService {
     @FormUrlEncoded
     @POST(PRODUCT+ALL+PHP)
-    Call<MainProductResponse> getSetting(@Field(COMMON_FIELD) String token);
+    Call<MainProductResponse> getProducts(@Field(COMMON_FIELD) String token);
+
+    @FormUrlEncoded
+    @POST(SLIDER+ALL+PHP)
+    Call<SliderResponse> getSlides(@Field(COMMON_FIELD) String token);
+
+    @FormUrlEncoded
+    @POST(CATS+ALL+PHP)
+    Call<CategoryResponse> getCats(@Field(COMMON_FIELD) String token);
 
     @FormUrlEncoded
     @POST(USER+ADD+PHP)
@@ -32,4 +44,5 @@ public interface ApiService {
     Call<UserRegistrationResponse> setUserViaPhone(@Field(COMMON_FIELD) String token,
                                                     @Field("mobile") String mo,
                                                     @Field("loginType") String type);
+
 }

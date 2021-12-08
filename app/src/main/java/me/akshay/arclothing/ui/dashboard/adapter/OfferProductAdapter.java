@@ -13,7 +13,9 @@ import java.util.ArrayList;
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.ItemClickListener;
 import me.akshay.arclothing.common.models.ProductModel;
+import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.databinding.ItemOfferProductBinding;
+import me.akshay.arclothing.ui.dashboard.DashboardViewModel;
 import me.akshay.arclothing.ui.helper.common.UiHelper;
 
 public class OfferProductAdapter extends RecyclerView.Adapter<OfferProductAdapter.OfferHolder> {
@@ -72,4 +74,5 @@ public class OfferProductAdapter extends RecyclerView.Adapter<OfferProductAdapte
             UiHelper.setUrlToImageView(context, binding.ivGridProductImage, model.imageUri);
         }
     }
+
 }

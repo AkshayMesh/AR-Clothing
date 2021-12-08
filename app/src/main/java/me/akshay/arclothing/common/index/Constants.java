@@ -1,5 +1,11 @@
 package me.akshay.arclothing.common.index;
 
+/**
+ *
+ * Contains confidential data
+ * not to be updated or deleted by anyone
+ * except for the head developer
+ */
 public class Constants {
 
     public interface IntConstants {
@@ -15,12 +21,11 @@ public class Constants {
     }
 
     public interface PreferenceKeys{
+        String EMPTY_KEY = "";
         String REGISTRATION = "entered";
         String USER = "user";
 
         String AUTH_TOKEN = "authToken";
-
-        String EMPTY_KEY = "";
 
         String TAX = "tax";
         String INVOICE = "invoice";
@@ -28,6 +33,8 @@ public class Constants {
         String IS_BUY_NOW = "is_buy_now";
 
         String MAIN_RESPONSE = "main_response";
+
+        String PROD_CODE = "productcode";
     }
 
     public interface StringConstants {
@@ -52,8 +59,8 @@ public class Constants {
         String API_TOKEN = "mAdmin4";
 
         //LOCAL HOST URL
+        String IP_ADDRESS = "192.168.43.166";
         String PROTOCOL = "http://";
-        String IP_ADDRESS = "192.168.0.104";
         String PARENT = "/vto";
         String MAIN_URL = PROTOCOL+IP_ADDRESS+PARENT+"/api";
         String ROOT_URL = MAIN_URL + "/requests/";
@@ -63,7 +70,9 @@ public class Constants {
 
     public interface ParentPath{
         String PRODUCT = "product";
+        String SLIDER = "slider";
         String USER = "user";
+        String CATS = "category";
     }
 
     public interface Functions{

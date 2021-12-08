@@ -14,7 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import java.lang.Deprecated;
 import java.lang.Object;
 import me.akshay.arclothing.R;
-import me.akshay.arclothing.common.models.SliderMain;
+import me.akshay.arclothing.common.models.SliderModel;
 
 public abstract class FragSliderMainBinding extends ViewDataBinding {
   @NonNull
@@ -27,7 +27,7 @@ public abstract class FragSliderMainBinding extends ViewDataBinding {
   public final TextView tvSliderPreheading;
 
   @Bindable
-  protected SliderMain mModel;
+  protected SliderModel mModel;
 
   protected FragSliderMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView ivSliderImage, TextView tvSliderHeading, TextView tvSliderPreheading) {
@@ -37,10 +37,10 @@ public abstract class FragSliderMainBinding extends ViewDataBinding {
     this.tvSliderPreheading = tvSliderPreheading;
   }
 
-  public abstract void setModel(@Nullable SliderMain model);
+  public abstract void setModel(@Nullable SliderModel model);
 
   @Nullable
-  public SliderMain getModel() {
+  public SliderModel getModel() {
     return mModel;
   }
 

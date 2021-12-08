@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.ItemClickListener;
 import me.akshay.arclothing.common.models.ProductModel;
+import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.databinding.ItemProductBinding;
+import me.akshay.arclothing.ui.dashboard.DashboardViewModel;
 import me.akshay.arclothing.ui.helper.common.UiHelper;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductHolder> {
@@ -68,8 +70,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         public void setBinding(ProductModel model){
             itemView.setOnClickListener(view -> mListener.onItemClick(view, model, getAdapterPosition()));
             UiHelper.setUrlToImageView(context, binding.ivProductImage, model.imageUri);
-            binding.setModel(model);
-
+            binding.setModel(getViewModel(model));
         }
     }
+
+    private DashboardViewModel getViewModel(ProductModel model){
+        DashboardViewModel subModel = new DashboardViewModel();
+        subModel.title = model.title;
+        subModel.description = model.description;
+        subModel.currentPrice = String.format("%s%s", Local.getCurrency(context), model.currentPrice);
+        subModel.previousPrice = String.format("%s%s", Local.getCurrency(context), model.previousPrice);
+        return subModel;
+    }
+
 }

@@ -44,10 +44,10 @@ public abstract class FragDashboardBinding extends ViewDataBinding {
   public final RecyclerView rvFeatureProduct;
 
   @NonNull
-  public final RecyclerView rvPDetailProductGrid;
+  public final RecyclerView rvOfferProduct;
 
   @NonNull
-  public final RecyclerView rvPopularProduct;
+  public final RecyclerView rvPDetailProductGrid;
 
   @NonNull
   public final NestedScrollView scrollView;
@@ -67,7 +67,7 @@ public abstract class FragDashboardBinding extends ViewDataBinding {
   protected FragDashboardBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView cartIv, TextView cartTv, CardView countCard, LinearLayout layoutSliderMainDots,
       ProgressBar progressBar, ConstraintLayout relativeLayout, RecyclerView rvFeatureProduct,
-      RecyclerView rvPDetailProductGrid, RecyclerView rvPopularProduct, NestedScrollView scrollView,
+      RecyclerView rvOfferProduct, RecyclerView rvPDetailProductGrid, NestedScrollView scrollView,
       TextView textViewFeaturedProducts, TextView textViewPopularProduct,
       TextView textViewRecentProducts, ViewPager vpSliderMain) {
     super(_bindingComponent, _root, _localFieldCount);
@@ -78,8 +78,8 @@ public abstract class FragDashboardBinding extends ViewDataBinding {
     this.progressBar = progressBar;
     this.relativeLayout = relativeLayout;
     this.rvFeatureProduct = rvFeatureProduct;
+    this.rvOfferProduct = rvOfferProduct;
     this.rvPDetailProductGrid = rvPDetailProductGrid;
-    this.rvPopularProduct = rvPopularProduct;
     this.scrollView = scrollView;
     this.textViewFeaturedProducts = textViewFeaturedProducts;
     this.textViewPopularProduct = textViewPopularProduct;

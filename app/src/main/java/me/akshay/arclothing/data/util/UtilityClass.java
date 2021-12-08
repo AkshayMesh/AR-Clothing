@@ -33,10 +33,14 @@ public class UtilityClass {
         return gson.toJson(obj);
     }
 
+    public static Gson Converter(){
+        return new Gson();
+    }
+
     public static <T> Object stringToObject(String jsonProduct, Class<T> obj) {
         Gson gson = new Gson();
         Type collectionType = new TypeToken<T>(){}.getType();
-        return gson.fromJson(jsonProduct, collectionType);
+        return gson.<T>fromJson(jsonProduct, collectionType);
     }
 
     /**

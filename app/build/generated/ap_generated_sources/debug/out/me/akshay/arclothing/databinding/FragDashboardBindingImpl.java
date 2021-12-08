@@ -16,15 +16,15 @@ public class FragDashboardBindingImpl extends FragDashboardBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.scroll_view, 1);
         sViewsWithIds.put(R.id.relative_layout, 2);
-        sViewsWithIds.put(R.id.count_card, 3);
-        sViewsWithIds.put(R.id.cart_tv, 4);
-        sViewsWithIds.put(R.id.vp_slider_main, 5);
-        sViewsWithIds.put(R.id.layout_slider_main_dots, 6);
+        sViewsWithIds.put(R.id.vp_slider_main, 3);
+        sViewsWithIds.put(R.id.layout_slider_main_dots, 4);
+        sViewsWithIds.put(R.id.count_card, 5);
+        sViewsWithIds.put(R.id.cart_tv, 6);
         sViewsWithIds.put(R.id.cart_iv, 7);
         sViewsWithIds.put(R.id.text_view_featured_products, 8);
         sViewsWithIds.put(R.id.rv_feature_product, 9);
         sViewsWithIds.put(R.id.text_view_popular_product, 10);
-        sViewsWithIds.put(R.id.rv_popular_product, 11);
+        sViewsWithIds.put(R.id.rv_offer_product, 11);
         sViewsWithIds.put(R.id.text_view_recent_products, 12);
         sViewsWithIds.put(R.id.rv_p_detail_product_grid, 13);
         sViewsWithIds.put(R.id.progress_bar, 14);
@@ -43,19 +43,19 @@ public class FragDashboardBindingImpl extends FragDashboardBinding  {
     private FragDashboardBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.ImageView) bindings[7]
-            , (android.widget.TextView) bindings[4]
-            , (androidx.cardview.widget.CardView) bindings[3]
-            , (android.widget.LinearLayout) bindings[6]
+            , (android.widget.TextView) bindings[6]
+            , (androidx.cardview.widget.CardView) bindings[5]
+            , (android.widget.LinearLayout) bindings[4]
             , (android.widget.ProgressBar) bindings[14]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[9]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[13]
             , (androidx.recyclerview.widget.RecyclerView) bindings[11]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[13]
             , (androidx.core.widget.NestedScrollView) bindings[1]
             , (android.widget.TextView) bindings[8]
             , (android.widget.TextView) bindings[10]
             , (android.widget.TextView) bindings[12]
-            , (androidx.viewpager.widget.ViewPager) bindings[5]
+            , (androidx.viewpager.widget.ViewPager) bindings[3]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);

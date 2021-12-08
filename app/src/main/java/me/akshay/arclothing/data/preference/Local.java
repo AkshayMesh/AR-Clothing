@@ -21,6 +21,11 @@ public class Local {
         editor.commit();
     }
 
+    public static String getCurrency(Context context){
+        SharedPreferences editor = context.getSharedPreferences(Credentials.SHARED_PREF_CURRENCY, Context.MODE_PRIVATE);
+        return editor.getString(Credentials.SHARED_PREF_CURRENCY_IN, "₹");
+    }
+
     public static boolean getLogStatus(Context context){
         SharedPreferences myPref = context.getSharedPreferences(Credentials.BASE, Context.MODE_PRIVATE);
         return myPref.getBoolean(PreferenceKeys.REGISTRATION,false);

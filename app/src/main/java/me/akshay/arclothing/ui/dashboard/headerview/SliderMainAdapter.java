@@ -7,26 +7,26 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import java.util.List;
 
-import me.akshay.arclothing.common.models.SliderMain;
+import me.akshay.arclothing.common.models.SliderModel;
 
 public class SliderMainAdapter extends FragmentStatePagerAdapter {
 
-    List<SliderMain> sliderMainList;
+    List<SliderModel> sliderModelList;
 
-    public SliderMainAdapter(FragmentManager fm, List<SliderMain> mList) {
+    public SliderMainAdapter(FragmentManager fm, List<SliderModel> mList) {
         super(fm);
-        this.sliderMainList = mList;
+        this.sliderModelList = mList;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return SliderMainItemFragment.newInstance(sliderMainList.get(position), position);
+        return SliderMainItemFragment.newInstance(sliderModelList.get(position), position);
     }
 
     @Override
     public int getCount() {
-        return sliderMainList.size();
+        return sliderModelList.size();
     }
 
 }

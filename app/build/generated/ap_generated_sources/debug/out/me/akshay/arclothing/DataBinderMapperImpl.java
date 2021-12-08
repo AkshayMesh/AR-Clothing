@@ -26,6 +26,7 @@ import me.akshay.arclothing.databinding.FragSliderMainBindingImpl;
 import me.akshay.arclothing.databinding.ItemFearureProductBindingImpl;
 import me.akshay.arclothing.databinding.ItemOfferProductBindingImpl;
 import me.akshay.arclothing.databinding.ItemProductBindingImpl;
+import me.akshay.arclothing.databinding.ItemRelatedBindingImpl;
 import me.akshay.arclothing.databinding.LayoutInterestProductBindingImpl;
 import me.akshay.arclothing.databinding.LayoutLoaderBindingImpl;
 import me.akshay.arclothing.databinding.LayoutNoInternetBindingImpl;
@@ -55,17 +56,19 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ITEMPRODUCT = 11;
 
-  private static final int LAYOUT_LAYOUTINTERESTPRODUCT = 12;
+  private static final int LAYOUT_ITEMRELATED = 12;
 
-  private static final int LAYOUT_LAYOUTLOADER = 13;
+  private static final int LAYOUT_LAYOUTINTERESTPRODUCT = 13;
 
-  private static final int LAYOUT_LAYOUTNOINTERNET = 14;
+  private static final int LAYOUT_LAYOUTLOADER = 14;
 
-  private static final int LAYOUT_LAYOUTPRODUCTACTIONS = 15;
+  private static final int LAYOUT_LAYOUTNOINTERNET = 15;
 
-  private static final int LAYOUT_LAYOUTPRODUCTDETAILS = 16;
+  private static final int LAYOUT_LAYOUTPRODUCTACTIONS = 16;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(16);
+  private static final int LAYOUT_LAYOUTPRODUCTDETAILS = 17;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(17);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.about_product, LAYOUT_ABOUTPRODUCT);
@@ -79,6 +82,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_fearure_product, LAYOUT_ITEMFEARUREPRODUCT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_offer_product, LAYOUT_ITEMOFFERPRODUCT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_product, LAYOUT_ITEMPRODUCT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_related, LAYOUT_ITEMRELATED);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.layout_interest_product, LAYOUT_LAYOUTINTERESTPRODUCT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.layout_loader, LAYOUT_LAYOUTLOADER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.layout_no_internet, LAYOUT_LAYOUTNOINTERNET);
@@ -160,6 +164,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ItemProductBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for item_product is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ITEMRELATED: {
+          if ("layout/item_related_0".equals(tag)) {
+            return new ItemRelatedBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for item_related is invalid. Received: " + tag);
         }
         case  LAYOUT_LAYOUTINTERESTPRODUCT: {
           if ("layout/layout_interest_product_0".equals(tag)) {
@@ -248,7 +258,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(16);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(17);
 
     static {
       sKeys.put("layout/about_product_0", me.akshay.arclothing.R.layout.about_product);
@@ -262,6 +272,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/item_fearure_product_0", me.akshay.arclothing.R.layout.item_fearure_product);
       sKeys.put("layout/item_offer_product_0", me.akshay.arclothing.R.layout.item_offer_product);
       sKeys.put("layout/item_product_0", me.akshay.arclothing.R.layout.item_product);
+      sKeys.put("layout/item_related_0", me.akshay.arclothing.R.layout.item_related);
       sKeys.put("layout/layout_interest_product_0", me.akshay.arclothing.R.layout.layout_interest_product);
       sKeys.put("layout/layout_loader_0", me.akshay.arclothing.R.layout.layout_loader);
       sKeys.put("layout/layout_no_internet_0", me.akshay.arclothing.R.layout.layout_no_internet);

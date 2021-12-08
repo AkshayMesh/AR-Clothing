@@ -1,50 +1,60 @@
 package me.akshay.arclothing.ui.dashboard;
 
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProvider;
+import static me.akshay.arclothing.common.index.Constants.PreferenceKeys.MAIN_RESPONSE;
+import static me.akshay.arclothing.common.index.Constants.PreferenceKeys.PROD_CODE;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.ItemClickListener;
 import me.akshay.arclothing.common.models.ProductModel;
-import me.akshay.arclothing.common.models.Slider;
-import me.akshay.arclothing.common.models.SliderMain;
-import me.akshay.arclothing.data.preference.Local;
+import me.akshay.arclothing.common.models.SliderModel;
+import me.akshay.arclothing.common.response.DashboardResponse;
+import me.akshay.arclothing.data.preference.Shared;
+import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.FragDashboardBinding;
+import me.akshay.arclothing.ui.dashboard.adapter.DashboardDataAdapter;
 import me.akshay.arclothing.ui.dashboard.adapter.FeatureProductAdapter;
 import me.akshay.arclothing.ui.dashboard.adapter.OfferProductAdapter;
 import me.akshay.arclothing.ui.dashboard.adapter.ProductAdapter;
 import me.akshay.arclothing.ui.dashboard.headerview.SliderMainAdapter;
 import me.akshay.arclothing.ui.helper.common.Loader;
 import me.akshay.arclothing.ui.helper.common.UiHelper;
+import me.akshay.arclothing.ui.product.details.ProductDetailsActivity;
 
 public class DashboardFragment extends Fragment implements ItemClickListener<ProductModel> {
 
     private DashboardViewModel mViewModel;
     private FragDashboardBinding binding;
-    private boolean iSRegistered;
     private FeatureProductAdapter fAdapter;
     private OfferProductAdapter oAdapter;
     private ProductAdapter pAdapter;
     private Activity mActivity;
     private Loader mLoader;
+    private DashboardResponse dashBoard;
 
     public static DashboardFragment newInstance() {
         return new DashboardFragment();
@@ -72,31 +82,83 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
         mActivity = getActivity();
         if (mActivity!=null){
             mLoader = new Loader(mActivity);
-            iSRegistered = Local.getLogStatus(mActivity);
             initRecyclerViews();
+            initDashBoardData();
         }
         if (mViewModel!=null){
 
         }
     }
 
+    private void initDashBoardData() {
+        dashBoard = UtilityClass.Converter().fromJson(Shared.getLocaleString(mActivity, MAIN_RESPONSE), DashboardResponse.class);
+        if (dashBoard==null){
+            setAllTitleGone();
+        }else {
+            initMainSlider();
+            addProductsToViews();
+        }
+    }
+
+    private void addProductsToViews() {
+        pAdapter.addItem(dashBoard.products.data);
+        oAdapter.addItem(DashboardDataAdapter.newInstance(dashBoard.products).getOfferProduct());
+        fAdapter.addItem(DashboardDataAdapter.newInstance(dashBoard.products).getFeaturedProduct());
+    }
+
+    /**
+     * this func is used to hide view when data not found
+     */
+    private void setAllTitleGone() {
+        binding.textViewRecentProducts.setVisibility(View.GONE);
+        binding.textViewPopularProduct.setVisibility(View.GONE);
+        binding.textViewFeaturedProducts.setVisibility(View.GONE);
+    }
+
     private void initRecyclerViews() {
-//        initMainSlider();
+        //todo remove cart lines
+        UiHelper.hideViews(binding.countCard, binding.cartIv);
+
         initOfferProduct();
+        initFeatureProduct();
+        initAllProducts();
+    }
+
+    private void initAllProducts() {
+        pAdapter = new ProductAdapter(new ArrayList<>(), mActivity);
+        pAdapter.setItemClickedListener(this);
+        binding.rvPDetailProductGrid.setHasFixedSize(false);
+        binding.rvPDetailProductGrid.setLayoutManager(new GridLayoutManager(mActivity, 2));
+        DividerItemDecoration decoration = new DividerItemDecoration(mActivity
+                , DividerItemDecoration.VERTICAL);
+        decoration.setDrawable(Objects.requireNonNull(ResourcesCompat.getDrawable(getResources(), R.drawable.text_strike_through, mActivity.getTheme())));
+        binding.rvPDetailProductGrid.addItemDecoration(decoration);
+        binding.rvPDetailProductGrid.setAdapter(pAdapter);
+        binding.rvPDetailProductGrid.setNestedScrollingEnabled(false);
+    }
+
+    private void initFeatureProduct() {
+        fAdapter = new FeatureProductAdapter(new ArrayList<>(), mActivity);
+        fAdapter.setItemClickedListener(this);
+        binding.rvFeatureProduct.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false));
+        binding.rvFeatureProduct.setAdapter(fAdapter);
     }
 
     private void initOfferProduct() {
         oAdapter = new OfferProductAdapter(new ArrayList<>(), mActivity);
         oAdapter.setItemClickedListener(this);
+        binding.rvOfferProduct.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false));
+        binding.rvOfferProduct.setAdapter(oAdapter);
     }
 
+    /**
+     * adding slides in pager
+     */
     private void initMainSlider(){
-        //todo init from local
-        Slider sliderMainList = new Slider();
-        PagerAdapter sliderMainAdapter = new SliderMainAdapter(getParentFragmentManager(), sliderMainList.mSliderMains);
+        PagerAdapter sliderMainAdapter = new SliderMainAdapter(getParentFragmentManager(), dashBoard.slides.data);
         binding.vpSliderMain.setAdapter(sliderMainAdapter);
 
-        dots(0, sliderMainList.mSliderMains);
+        dots(0, dashBoard.slides.data);
 
         binding.vpSliderMain.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -105,7 +167,7 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
 
             @Override
             public void onPageSelected(int position) {
-                dots(position, sliderMainList.mSliderMains);
+                dots(position, dashBoard.slides.data);
             }
 
             @Override
@@ -115,14 +177,12 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
 
     }
 
-
-
     /**
      * adding slider dots
      */
-    private void dots(int current, List<SliderMain> sliderMainList) {
+    private void dots(int current, List<SliderModel> sliderModelList) {
         binding.layoutSliderMainDots.removeAllViews();
-        for (int i = 0; i < sliderMainList.size(); i++) {
+        for (int i = 0; i < sliderModelList.size(); i++) {
             TextView dot = new TextView(mActivity);
             dot.setIncludeFontPadding(false);
             dot.setHeight((int) UiHelper.dpToPx(5, mActivity));
@@ -143,8 +203,11 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
         }
     }
 
+
+
     @Override
     public void onItemClick(View view, ProductModel item, int i) {
-
+        Shared.setLocaleString(mActivity, PROD_CODE, UtilityClass.objectToString(item));
+        startActivity(new Intent(mActivity, ProductDetailsActivity.class));
     }
 }

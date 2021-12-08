@@ -3,7 +3,7 @@
     <data>
         <variable
             name="model"
-            type="me.akshay.arclothing.common.models.ProductModel" />
+            type="me.akshay.arclothing.ui.dashboard.DashboardViewModel" />
     </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -35,6 +35,7 @@
                         android:id="@+id/iv_product_image"
                         android:layout_width="0dp"
                         android:layout_height="240dp"
+                        android:background="@color/colorPrimary"
                         card_view:layout_constraintStart_toStartOf="parent"
                         card_view:layout_constraintTop_toTopOf="parent"
                         card_view:layout_constraintEnd_toEndOf="parent"
@@ -70,17 +71,21 @@
                         android:layout_marginBottom="2dp"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        tools:text="TextView"/>
+                        android:text="@{model.title}"
+                        android:textColor="@color/black"
+                        tools:text="TextView" />
 
                     <TextView
                         android:id="@+id/text_view_product_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_grid_product_heading"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:layout_below="@id/tv_grid_product_heading"
-                        tools:text="test on layout with 2 lines max"
-                        android:textColor="@color/semi_white"/>
+                        android:textColor="@color/semi_black"
+                        android:text="@{model.description}"
+                        android:textSize="12sp"
+                        tools:text="test on layout with 2 lines max" />
 
                     <TextView
                         android:id="@+id/tv_grid_product_price"
@@ -89,6 +94,7 @@
                         android:layout_below="@id/text_view_product_description"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="15sp"
+                        android:text="@{model.currentPrice}"
                         android:textStyle="bold"
                         tools:text="TextView" />
 
@@ -101,6 +107,7 @@
                         android:paddingLeft="2dp"
                         android:paddingRight="2dp"
                         tools:text="Prev"
+                        android:text="@{model.previousPrice}"
                         android:layout_marginBottom="4dp"
                         android:textColor="@color/colorGrey"
                         android:textSize="15sp" />

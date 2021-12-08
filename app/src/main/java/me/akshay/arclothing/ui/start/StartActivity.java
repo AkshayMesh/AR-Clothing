@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.index.Constants;
-import me.akshay.arclothing.common.response.MainProductResponse;
+import me.akshay.arclothing.common.response.DashboardResponse;
 import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.data.preference.Shared;
 import me.akshay.arclothing.data.util.NetworkHelper;
@@ -25,7 +25,7 @@ import me.akshay.arclothing.ui.helper.common.UiHelper;
 import me.akshay.arclothing.ui.home.HomeActivity;
 import me.akshay.arclothing.ui.login.LoginActivity;
 
-public class StartActivity extends AppCompatActivity implements Observer<MainProductResponse>{
+public class StartActivity extends AppCompatActivity implements Observer<DashboardResponse>{
 
     private ActivityStartBinding viewBinding;
     private StartViewModel viewModel;
@@ -51,14 +51,11 @@ public class StartActivity extends AppCompatActivity implements Observer<MainPro
         StatusBarHelper.getAdaptiveNavBar(this, R.color.start_start);
 
         if (NetworkHelper.hasNetworkAccess(this)) {
-            //todo remove this line
-//            Local.dropUserLog(this);
-//            checkTimeToFinish(System.currentTimeMillis());
-
-
             UiHelper.hideViews(viewBinding.offlineText);
-            repo.updateSettings();
-            viewModel.getSettingsLiveData().observe(this, this);
+            repo.updateProducts();
+            repo.updateSlides();
+            repo.updateCats();
+            viewModel.getSettings().observe(this, this);
             viewModel.getErrorMsg().observe(this, s ->
                     Toast.makeText(StartActivity.this, s, Toast.LENGTH_SHORT).show());
         } else UiHelper.showViews(viewBinding.offlineText);
@@ -92,11 +89,22 @@ public class StartActivity extends AppCompatActivity implements Observer<MainPro
     }
 
     @Override
-    public void onChanged(MainProductResponse settings) {
-        Shared.setLocaleString(this, MAIN_RESPONSE,UtilityClass.objectToString(settings));
-        long endTime = System.currentTimeMillis();
-        Shared.setLocaleFlag(this, Constants.PreferenceKeys.IS_BUY_NOW,false);
-        Local.setCurrency(this, "₹");
-        checkTimeToFinish(endTime);
+    public void onChanged(DashboardResponse settings) {
+        String error_code;
+        if(settings.products == null){
+            error_code = "Error : 22001";
+        }else if (settings.slides == null){
+            error_code = "Error : 22002";
+        }else if (settings.categories == null){
+            error_code = "Error : 22003";
+        }else{
+            error_code = "Welcome";
+            Shared.setLocaleString(this, MAIN_RESPONSE,UtilityClass.objectToString(settings));
+            long endTime = System.currentTimeMillis();
+            Shared.setLocaleFlag(this, Constants.PreferenceKeys.IS_BUY_NOW,false);
+            Local.setCurrency(this, "₹");
+            checkTimeToFinish(endTime);
+        }
+//        Toast.makeText(this, error_code, Toast.LENGTH_SHORT).show();
     }
 }

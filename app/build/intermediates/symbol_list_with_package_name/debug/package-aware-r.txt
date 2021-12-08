@@ -2166,6 +2166,7 @@ drawable hsbc
 drawable ic_action_cart
 drawable ic_action_delete
 drawable ic_back
+drawable ic_cart
 drawable ic_check_circle_black_48dp
 drawable ic_clock_black_24dp
 drawable ic_done_black_24dp
@@ -2858,8 +2859,8 @@ id rounded
 id row_index_key
 id rvApps
 id rv_feature_product
+id rv_offer_product
 id rv_p_detail_product_grid
-id rv_popular_product
 id s_payu_review_details
 id same_level
 id save_non_transition_alpha
@@ -3262,6 +3263,7 @@ layout fragment_validate_wallet
 layout item_fearure_product
 layout item_offer_product
 layout item_product
+layout item_related
 layout layout_bottom_nav
 layout layout_interest_product
 layout layout_loader
@@ -4363,6 +4365,7 @@ style TextAppearance_MaterialComponents_Tooltip
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
+style TextViewStyle
 style Theme_AppCompat
 style Theme_AppCompat_CompactMenu
 style Theme_AppCompat_DayNight

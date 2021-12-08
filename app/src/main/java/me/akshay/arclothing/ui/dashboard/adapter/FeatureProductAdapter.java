@@ -13,14 +13,15 @@ import java.util.ArrayList;
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.ItemClickListener;
 import me.akshay.arclothing.common.models.ProductModel;
-import me.akshay.arclothing.data.util.UtilityClass;
+import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.databinding.ItemFearureProductBinding;
+import me.akshay.arclothing.ui.dashboard.DashboardViewModel;
 import me.akshay.arclothing.ui.helper.common.UiHelper;
 
 public class FeatureProductAdapter extends RecyclerView.Adapter<FeatureProductAdapter.FeatureProductHolder> {
 
-    private ArrayList<ProductModel> productList;
-    private Activity context;
+    private final ArrayList<ProductModel> productList;
+    private final Activity context;
     public ItemClickListener<ProductModel> mListener;
 
 
@@ -66,8 +67,16 @@ public class FeatureProductAdapter extends RecyclerView.Adapter<FeatureProductAd
         }
         public void bind(ProductModel model){
             itemView.setOnClickListener(view -> mListener.onItemClick(view, model, getAdapterPosition()));
-            binding.setFeatureModel(model);
+            binding.setFeatureModel(getViewModel(model));
             UiHelper.setUrlToImageView(context, binding.ivGridProductImage, model.imageUri);
         }
+    }
+
+    private DashboardViewModel getViewModel(ProductModel model){
+        DashboardViewModel subModel = new DashboardViewModel();
+        subModel.title = model.title;
+        subModel.currentPrice = String.format("%s%s", Local.getCurrency(context), model.currentPrice);
+        subModel.previousPrice = String.format("%s%s", Local.getCurrency(context), model.previousPrice);
+        return subModel;
     }
 }
