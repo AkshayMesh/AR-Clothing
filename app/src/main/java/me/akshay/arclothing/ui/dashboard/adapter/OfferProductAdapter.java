@@ -56,7 +56,7 @@ public class OfferProductAdapter extends RecyclerView.Adapter<OfferProductAdapte
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return Math.min(productList.size(), 6);
     }
 
     public class OfferHolder extends RecyclerView.ViewHolder {

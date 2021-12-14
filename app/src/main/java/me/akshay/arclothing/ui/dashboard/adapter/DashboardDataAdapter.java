@@ -8,7 +8,7 @@ public class DashboardDataAdapter {
     private static MainProductResponse mainResponse;
     private static DashboardDataAdapter mInstance;
 
-    public static DashboardDataAdapter newInstance(MainProductResponse mainResponse) {
+    public static DashboardDataAdapter from(MainProductResponse mainResponse) {
         if (mainResponse == null)
             return null;
         if (mInstance == null)

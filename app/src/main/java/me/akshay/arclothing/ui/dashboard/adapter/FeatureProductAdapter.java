@@ -56,7 +56,7 @@ public class FeatureProductAdapter extends RecyclerView.Adapter<FeatureProductAd
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return Math.min(productList.size(), 6);
     }
 
     public class FeatureProductHolder extends RecyclerView.ViewHolder {

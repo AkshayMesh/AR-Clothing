@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     private HomeViewModel viewModel;
     private HomeRepo repo;
     private boolean isRegistered;
+    public static boolean visitedDashBoard = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +48,11 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.search:
 //                    startActivity(new Intent(HomeActivity.this, SearchActivity.class));
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-                case R.id.wished:
-                    if (isRegistered){
-//                        startActivity(new Intent(HomeActivity.this, UserFavActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
-                    }else {
-                        UiHelper.openSignInPopUp(HomeActivity.this);
-                    }
+                    break;
+                case R.id.cart:
+//                    startActivity(new Intent(HomeActivity.this, CartActivity.class));
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    break;
                 case R.id.profile:
                     if (isRegistered){
 //                        startActivity(new Intent(HomeActivity.this, UserDetailActivity.class));

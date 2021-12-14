@@ -59,7 +59,7 @@ public class Constants {
         String API_TOKEN = "mAdmin4";
 
         //LOCAL HOST URL
-        String IP_ADDRESS = "192.168.43.166";
+        String IP_ADDRESS = "192.168.0.104";
         String PROTOCOL = "http://";
         String PARENT = "/vto";
         String MAIN_URL = PROTOCOL+IP_ADDRESS+PARENT+"/api";
@@ -77,6 +77,7 @@ public class Constants {
 
     public interface Functions{
         String ADD = "/add";
+        String ONE = "/one";
         String ALL = "/all";
     }
 

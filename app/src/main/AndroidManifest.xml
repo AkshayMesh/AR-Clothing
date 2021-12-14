@@ -26,7 +26,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/TransStatus"/>
         <activity android:name=".ui.start.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -41,8 +41,8 @@ import me.akshay.arclothing.ui.dashboard.adapter.FeatureProductAdapter;
 import me.akshay.arclothing.ui.dashboard.adapter.OfferProductAdapter;
 import me.akshay.arclothing.ui.dashboard.adapter.ProductAdapter;
 import me.akshay.arclothing.ui.dashboard.headerview.SliderMainAdapter;
-import me.akshay.arclothing.ui.helper.common.Loader;
 import me.akshay.arclothing.ui.helper.common.UiHelper;
+import me.akshay.arclothing.ui.home.HomeActivity;
 import me.akshay.arclothing.ui.product.details.ProductDetailsActivity;
 
 public class DashboardFragment extends Fragment implements ItemClickListener<ProductModel> {
@@ -53,12 +53,7 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
     private OfferProductAdapter oAdapter;
     private ProductAdapter pAdapter;
     private Activity mActivity;
-    private Loader mLoader;
     private DashboardResponse dashBoard;
-
-    public static DashboardFragment newInstance() {
-        return new DashboardFragment();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -73,7 +68,6 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
         mViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
         binding.setLifecycleOwner(this);
         binding.executePendingBindings();
-        // TODO: Use the ViewModel
     }
 
     @Override
@@ -81,13 +75,19 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
         super.onViewCreated(view, savedInstanceState);
         mActivity = getActivity();
         if (mActivity!=null){
-            mLoader = new Loader(mActivity);
             initRecyclerViews();
             initDashBoardData();
         }
         if (mViewModel!=null){
-
+            HomeActivity.visitedDashBoard = true;
         }
+    }
+
+    @Override
+    public void onItemClick(View view, ProductModel item, int i) {
+        Intent intent = new Intent(mActivity, ProductDetailsActivity.class);
+        intent.putExtra(PROD_CODE, ""+item.productCode);
+        startActivity(intent);
     }
 
     private void initDashBoardData() {
@@ -102,8 +102,8 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
 
     private void addProductsToViews() {
         pAdapter.addItem(dashBoard.products.data);
-        oAdapter.addItem(DashboardDataAdapter.newInstance(dashBoard.products).getOfferProduct());
-        fAdapter.addItem(DashboardDataAdapter.newInstance(dashBoard.products).getFeaturedProduct());
+        oAdapter.addItem(DashboardDataAdapter.from(dashBoard.products).getOfferProduct());
+        fAdapter.addItem(DashboardDataAdapter.from(dashBoard.products).getFeaturedProduct());
     }
 
     /**
@@ -116,9 +116,6 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
     }
 
     private void initRecyclerViews() {
-        //todo remove cart lines
-        UiHelper.hideViews(binding.countCard, binding.cartIv);
-
         initOfferProduct();
         initFeatureProduct();
         initAllProducts();
@@ -203,11 +200,4 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
         }
     }
 
-
-
-    @Override
-    public void onItemClick(View view, ProductModel item, int i) {
-        Shared.setLocaleString(mActivity, PROD_CODE, UtilityClass.objectToString(item));
-        startActivity(new Intent(mActivity, ProductDetailsActivity.class));
-    }
 }

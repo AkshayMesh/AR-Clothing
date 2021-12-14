@@ -12,6 +12,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="4dp"
             android:text="@string/buy_now"
             android:textColor="@color/colorPrimary"
             android:backgroundTint="@color/white"/>
@@ -21,6 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="4dp"
             android:textColor="@color/white"
             android:text="@string/add_cart"
             android:drawableStart="@drawable/ic_action_cart"
