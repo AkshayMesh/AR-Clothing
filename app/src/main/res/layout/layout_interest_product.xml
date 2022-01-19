@@ -6,8 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_interested_product"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/start_center">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/text_view_title"

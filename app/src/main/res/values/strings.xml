@@ -9,6 +9,7 @@
     <!--Transition names-->
     <string name="title_transition">title</string>
     <string name="input_state">sliders</string>
+    <string name="product_transition">product</string>
 
     <!--Content Description-->
     <string name="common_desc">AppLogoImage</string>
@@ -42,4 +43,10 @@
     <string name="you_may_be_interested_in">You may also like</string>
     <string name="buy_now">Buy Now</string>
     <string name="add_cart">Add to cart</string>
+
+    <!--SEARCH-->
+    <string name="search">Search</string>
+    <string name="search_here">Search here</string>
+    <string name="no_products_found">No products Found</string>
+    <string name="top_category">Top Categories</string>
 </resources>

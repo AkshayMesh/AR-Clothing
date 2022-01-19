@@ -18,16 +18,13 @@ public class FragDashboardBindingImpl extends FragDashboardBinding  {
         sViewsWithIds.put(R.id.relative_layout, 2);
         sViewsWithIds.put(R.id.vp_slider_main, 3);
         sViewsWithIds.put(R.id.layout_slider_main_dots, 4);
-        sViewsWithIds.put(R.id.count_card, 5);
-        sViewsWithIds.put(R.id.cart_tv, 6);
-        sViewsWithIds.put(R.id.cart_iv, 7);
-        sViewsWithIds.put(R.id.text_view_featured_products, 8);
-        sViewsWithIds.put(R.id.rv_feature_product, 9);
-        sViewsWithIds.put(R.id.text_view_popular_product, 10);
-        sViewsWithIds.put(R.id.rv_offer_product, 11);
-        sViewsWithIds.put(R.id.text_view_recent_products, 12);
-        sViewsWithIds.put(R.id.rv_p_detail_product_grid, 13);
-        sViewsWithIds.put(R.id.progress_bar, 14);
+        sViewsWithIds.put(R.id.text_view_featured_products, 5);
+        sViewsWithIds.put(R.id.rv_feature_product, 6);
+        sViewsWithIds.put(R.id.text_view_popular_product, 7);
+        sViewsWithIds.put(R.id.rv_offer_product, 8);
+        sViewsWithIds.put(R.id.text_view_recent_products, 9);
+        sViewsWithIds.put(R.id.rv_p_detail_product_grid, 10);
+        sViewsWithIds.put(R.id.progress_bar, 11);
     }
     // views
     @NonNull
@@ -38,23 +35,20 @@ public class FragDashboardBindingImpl extends FragDashboardBinding  {
     // Inverse Binding Event Handlers
 
     public FragDashboardBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private FragDashboardBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[7]
-            , (android.widget.TextView) bindings[6]
-            , (androidx.cardview.widget.CardView) bindings[5]
             , (android.widget.LinearLayout) bindings[4]
-            , (android.widget.ProgressBar) bindings[14]
+            , (android.widget.ProgressBar) bindings[11]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[9]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[11]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[13]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[6]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[8]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[10]
             , (androidx.core.widget.NestedScrollView) bindings[1]
-            , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[10]
-            , (android.widget.TextView) bindings[12]
+            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[9]
             , (androidx.viewpager.widget.ViewPager) bindings[3]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];

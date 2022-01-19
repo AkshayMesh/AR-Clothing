@@ -1,26 +1,27 @@
 me/akshay/arclothing/ui/dashboard/DashboardViewModel.java
  me.akshay.arclothing.ui.dashboard.DashboardViewModel
-me/akshay/arclothing/common/response/DashboardResponse.java
- me.akshay.arclothing.common.response.DashboardResponse
-me/akshay/arclothing/data/room/AppDatabase.java
- me.akshay.arclothing.data.room.AppDatabase
- me.akshay.arclothing.data.room.AppDatabase$1
-me/akshay/arclothing/ui/login/LoginRepoCallBack.java
- me.akshay.arclothing.ui.login.LoginRepoCallBack
+me/akshay/arclothing/ui/start/StartActivity.java
+ me.akshay.arclothing.ui.start.StartActivity
+me/akshay/arclothing/databinding/ItemFearureProductBinding.java
+ me.akshay.arclothing.databinding.ItemFearureProductBinding
+me/akshay/arclothing/data/LocalPreference.java
+ me.akshay.arclothing.data.LocalPreference
 me/akshay/arclothing/common/models/CategoryModel.java
  me.akshay.arclothing.common.models.CategoryModel
 me/akshay/arclothing/service/PermissionService.java
  me.akshay.arclothing.service.PermissionService
+me/akshay/arclothing/ui/search/SearchRepoCallBack.java
+ me.akshay.arclothing.ui.search.SearchRepoCallBack
 me/akshay/arclothing/data/room/DatabaseUtil.java
  me.akshay.arclothing.data.room.DatabaseUtil
-me/akshay/arclothing/BuildConfig.java
- me.akshay.arclothing.BuildConfig
+me/akshay/arclothing/databinding/ActivityProductDetailsBinding.java
+ me.akshay.arclothing.databinding.ActivityProductDetailsBinding
 me/akshay/arclothing/ui/product/details/ProductViewModel.java
  me.akshay.arclothing.ui.product.details.ProductViewModel
 me/akshay/arclothing/common/response/UserRegistrationResponse.java
  me.akshay.arclothing.common.response.UserRegistrationResponse
-me/akshay/arclothing/ui/dashboard/headerview/SliderMainAdapter.java
- me.akshay.arclothing.ui.dashboard.headerview.SliderMainAdapter
+me/akshay/arclothing/databinding/LayoutInterestProductBinding.java
+ me.akshay.arclothing.databinding.LayoutInterestProductBinding
 me/akshay/arclothing/common/ItemClickListener.java
  me.akshay.arclothing.common.ItemClickListener
 me/akshay/arclothing/ui/start/StartRepo.java
@@ -28,14 +29,14 @@ me/akshay/arclothing/ui/start/StartRepo.java
  me.akshay.arclothing.ui.start.StartRepo$1
  me.akshay.arclothing.ui.start.StartRepo$2
  me.akshay.arclothing.ui.start.StartRepo$3
-me/akshay/arclothing/DataBindingTriggerClass.java
- me.akshay.arclothing.DataBindingTriggerClass
+me/akshay/arclothing/ui/helper/common/Loader.java
+ me.akshay.arclothing.ui.helper.common.Loader
 me/akshay/arclothing/data/preference/Shared.java
  me.akshay.arclothing.data.preference.Shared
-me/akshay/arclothing/common/models/ProductInventory.java
- me.akshay.arclothing.common.models.ProductInventory
-me/akshay/arclothing/common/response/MainProductResponse.java
- me.akshay.arclothing.common.response.MainProductResponse
+me/akshay/arclothing/databinding/LayoutLoaderBinding.java
+ me.akshay.arclothing.databinding.LayoutLoaderBinding
+me/akshay/arclothing/databinding/ActivityHomeBinding.java
+ me.akshay.arclothing.databinding.ActivityHomeBinding
 me/akshay/arclothing/ui/login/LoginViewModel.java
  me.akshay.arclothing.ui.login.LoginViewModel
 me/akshay/arclothing/ui/home/HomeRepo.java
@@ -44,37 +45,35 @@ me/akshay/arclothing/data/util/NetworkHelper.java
  me.akshay.arclothing.data.util.NetworkHelper
 me/akshay/arclothing/common/models/ProductModel.java
  me.akshay.arclothing.common.models.ProductModel
-me/akshay/arclothing/common/models/DeviceModel.java
- me.akshay.arclothing.common.models.DeviceModel
-me/akshay/arclothing/common/response/SliderResponse.java
- me.akshay.arclothing.common.response.SliderResponse
+me/akshay/arclothing/databinding/FragOtpBinding.java
+ me.akshay.arclothing.databinding.FragOtpBinding
+me/akshay/arclothing/databinding/ActivityStartBinding.java
+ me.akshay.arclothing.databinding.ActivityStartBinding
 me/akshay/arclothing/ui/helper/touchview/TouchImageView.java
  me.akshay.arclothing.ui.helper.touchview.TouchImageView
  me.akshay.arclothing.ui.helper.touchview.TouchImageView$1
  me.akshay.arclothing.ui.helper.touchview.TouchImageView$ScaleListener
-me/akshay/arclothing/common/models/SliderModel.java
- me.akshay.arclothing.common.models.SliderModel
- me.akshay.arclothing.common.models.SliderModel$1
-me/akshay/arclothing/data/encryption/MCrypt.java
- me.akshay.arclothing.data.encryption.MCrypt
+me/akshay/arclothing/data/preference/Local.java
+ me.akshay.arclothing.data.preference.Local
+me/akshay/arclothing/databinding/LayoutProductDetailsBinding.java
+ me.akshay.arclothing.databinding.LayoutProductDetailsBinding
 me/akshay/arclothing/ui/home/HomeRepoCallBack.java
  me.akshay.arclothing.ui.home.HomeRepoCallBack
-me/akshay/arclothing/data/web/RetrofitClient.java
- me.akshay.arclothing.data.web.RetrofitClient
+me/akshay/arclothing/service/FirebaseNotifyService.java
+ me.akshay.arclothing.service.FirebaseNotifyService
 me/akshay/arclothing/ui/start/StartViewModel.java
  me.akshay.arclothing.ui.start.StartViewModel
-me/akshay/arclothing/databinding/AboutProductBinding.java
- me.akshay.arclothing.databinding.AboutProductBinding
-me/akshay/arclothing/common/models/DataModel.java
- me.akshay.arclothing.common.models.DataModel
-me/akshay/arclothing/ui/login/LoginBottomSheet.java
- me.akshay.arclothing.ui.login.LoginBottomSheet
- me.akshay.arclothing.ui.login.LoginBottomSheet$1
- me.akshay.arclothing.ui.login.LoginBottomSheet$LoginCallBack
-me/akshay/arclothing/data/web/ApiService.java
- me.akshay.arclothing.data.web.ApiService
-me/akshay/arclothing/ui/home/HomeViewModel.java
- me.akshay.arclothing.ui.home.HomeViewModel
+me/akshay/arclothing/databinding/FragSearchBinding.java
+ me.akshay.arclothing.databinding.FragSearchBinding
+me/akshay/arclothing/databinding/ItemProductBinding.java
+ me.akshay.arclothing.databinding.ItemProductBinding
+me/akshay/arclothing/ui/dashboard/adapter/DashboardDataAdapter.java
+ me.akshay.arclothing.ui.dashboard.adapter.DashboardDataAdapter
+me/akshay/arclothing/databinding/FragSliderMainBinding.java
+ me.akshay.arclothing.databinding.FragSliderMainBinding
+me/akshay/arclothing/data/util/UtilityClass.java
+ me.akshay.arclothing.data.util.UtilityClass
+ me.akshay.arclothing.data.util.UtilityClass$1
 me/akshay/arclothing/common/response/StringResponse.java
  me.akshay.arclothing.common.response.StringResponse
 me/akshay/arclothing/common/models/AddressModel.java
@@ -83,16 +82,22 @@ me/akshay/arclothing/common/models/UserRegistrationInfo.java
  me.akshay.arclothing.common.models.UserRegistrationInfo
 me/akshay/arclothing/common/models/SettingsModel.java
  me.akshay.arclothing.common.models.SettingsModel
-me/akshay/arclothing/common/response/CategoryResponse.java
- me.akshay.arclothing.common.response.CategoryResponse
+me/akshay/arclothing/data/room/FoldDatabase.java
+ me.akshay.arclothing.data.room.FoldDatabase
 me/akshay/arclothing/data/room/dao/CodesDao.java
  me.akshay.arclothing.data.room.dao.CodesDao
 me/akshay/arclothing/common/response/SettingsResponse.java
  me.akshay.arclothing.common.response.SettingsResponse
 me/akshay/arclothing/ui/product/details/ProductRepo.java
  me.akshay.arclothing.ui.product.details.ProductRepo
+ me.akshay.arclothing.ui.product.details.ProductRepo$1
+ me.akshay.arclothing.ui.product.details.ProductRepo$2
 me/akshay/arclothing/ui/helper/common/StatusBarHelper.java
  me.akshay.arclothing.ui.helper.common.StatusBarHelper
+me/akshay/arclothing/databinding/LayoutBottomNavBinding.java
+ me.akshay.arclothing.databinding.LayoutBottomNavBinding
+me/akshay/arclothing/common/response/OneProductResponse.java
+ me.akshay.arclothing.common.response.OneProductResponse
 me/akshay/arclothing/common/index/Constants.java
  me.akshay.arclothing.common.index.Constants
  me.akshay.arclothing.common.index.Constants$Credentials
@@ -106,94 +111,119 @@ me/akshay/arclothing/common/index/Constants.java
  me.akshay.arclothing.common.index.Constants$ServerUrl
  me.akshay.arclothing.common.index.Constants$StringConstants
  me.akshay.arclothing.common.index.Constants$WebURL
-me/akshay/arclothing/ui/start/StartRepoCallBack.java
- me.akshay.arclothing.ui.start.StartRepoCallBack
-me/akshay/arclothing/common/models/PaymentCredentialModel.java
- me.akshay.arclothing.common.models.PaymentCredentialModel
+me/akshay/arclothing/ui/dashboard/adapter/FeatureProductAdapter.java
+ me.akshay.arclothing.ui.dashboard.adapter.FeatureProductAdapter
+ me.akshay.arclothing.ui.dashboard.adapter.FeatureProductAdapter$FeatureProductHolder
+me/akshay/arclothing/ui/cart/CartRepoCallBack.java
+ me.akshay.arclothing.ui.cart.CartRepoCallBack
+me/akshay/arclothing/databinding/LayoutNoInternetBinding.java
+ me.akshay.arclothing.databinding.LayoutNoInternetBinding
 me/akshay/arclothing/ui/product/details/InterestProductAdapter.java
  me.akshay.arclothing.ui.product.details.InterestProductAdapter
-me/akshay/arclothing/ui/login/LoginRepo.java
- me.akshay.arclothing.ui.login.LoginRepo
- me.akshay.arclothing.ui.login.LoginRepo$1
- me.akshay.arclothing.ui.login.LoginRepo$2
-me/akshay/arclothing/data/room/dao/TableNames.java
- me.akshay.arclothing.data.room.dao.TableNames
-me/akshay/arclothing/ui/product/details/ProductRepoCallback.java
- me.akshay.arclothing.ui.product.details.ProductRepoCallback
-me/akshay/arclothing/ui/start/StartActivity.java
- me.akshay.arclothing.ui.start.StartActivity
+ me.akshay.arclothing.ui.product.details.InterestProductAdapter$ProductHolder
+me/akshay/arclothing/ui/cart/CartViewModel.java
+ me.akshay.arclothing.ui.cart.CartViewModel
 me/akshay/arclothing/ui/dashboard/headerview/SliderMainItemFragment.java
  me.akshay.arclothing.ui.dashboard.headerview.SliderMainItemFragment
 me/akshay/arclothing/databinding/ItemRelatedBinding.java
  me.akshay.arclothing.databinding.ItemRelatedBinding
-me/akshay/arclothing/databinding/ItemFearureProductBinding.java
- me.akshay.arclothing.databinding.ItemFearureProductBinding
-me/akshay/arclothing/data/LocalPreference.java
- me.akshay.arclothing.data.LocalPreference
+me/akshay/arclothing/ui/product/details/ProductRepoCallback.java
+ me.akshay.arclothing.ui.product.details.ProductRepoCallback
+me/akshay/arclothing/common/models/PaymentCredentialModel.java
+ me.akshay.arclothing.common.models.PaymentCredentialModel
+me/akshay/arclothing/common/response/DashboardResponse.java
+ me.akshay.arclothing.common.response.DashboardResponse
+me/akshay/arclothing/ui/start/StartRepoCallBack.java
+ me.akshay.arclothing.ui.start.StartRepoCallBack
 me/akshay/arclothing/databinding/LayoutProductActionsBinding.java
  me.akshay.arclothing.databinding.LayoutProductActionsBinding
-me/akshay/arclothing/databinding/ActivityProductDetailsBinding.java
- me.akshay.arclothing.databinding.ActivityProductDetailsBinding
-me/akshay/arclothing/databinding/LayoutInterestProductBinding.java
- me.akshay.arclothing.databinding.LayoutInterestProductBinding
-me/akshay/arclothing/ui/home/HomeActivity.java
- me.akshay.arclothing.ui.home.HomeActivity
-me/akshay/arclothing/ui/helper/common/Loader.java
- me.akshay.arclothing.ui.helper.common.Loader
-me/akshay/arclothing/databinding/LayoutLoaderBinding.java
- me.akshay.arclothing.databinding.LayoutLoaderBinding
-me/akshay/arclothing/databinding/ActivityHomeBinding.java
- me.akshay.arclothing.databinding.ActivityHomeBinding
-me/akshay/arclothing/databinding/FragOtpBinding.java
- me.akshay.arclothing.databinding.FragOtpBinding
-me/akshay/arclothing/databinding/ActivityStartBinding.java
- me.akshay.arclothing.databinding.ActivityStartBinding
+me/akshay/arclothing/databinding/ItemCategoryBinding.java
+ me.akshay.arclothing.databinding.ItemCategoryBinding
+me/akshay/arclothing/data/room/dao/TableNames.java
+ me.akshay.arclothing.data.room.dao.TableNames
+me/akshay/arclothing/data/room/AppDatabase.java
+ me.akshay.arclothing.data.room.AppDatabase
+ me.akshay.arclothing.data.room.AppDatabase$1
+me/akshay/arclothing/databinding/AboutProductBinding.java
+ me.akshay.arclothing.databinding.AboutProductBinding
+me/akshay/arclothing/ui/dashboard/headerview/SliderMainAdapter.java
+ me.akshay.arclothing.ui.dashboard.headerview.SliderMainAdapter
+me/akshay/arclothing/common/models/ProductInventory.java
+ me.akshay.arclothing.common.models.ProductInventory
 me/akshay/arclothing/databinding/ActivityLoginBinding.java
  me.akshay.arclothing.databinding.ActivityLoginBinding
+me/akshay/arclothing/ui/home/HomeViewModel.java
+ me.akshay.arclothing.ui.home.HomeViewModel
 me/akshay/arclothing/databinding/FragDashboardBinding.java
  me.akshay.arclothing.databinding.FragDashboardBinding
-me/akshay/arclothing/data/preference/Local.java
- me.akshay.arclothing.data.preference.Local
-me/akshay/arclothing/databinding/LayoutProductDetailsBinding.java
- me.akshay.arclothing.databinding.LayoutProductDetailsBinding
+me/akshay/arclothing/data/web/ApiService.java
+ me.akshay.arclothing.data.web.ApiService
+me/akshay/arclothing/common/models/DataModel.java
+ me.akshay.arclothing.common.models.DataModel
+me/akshay/arclothing/ui/login/LoginRepo.java
+ me.akshay.arclothing.ui.login.LoginRepo
+ me.akshay.arclothing.ui.login.LoginRepo$1
+ me.akshay.arclothing.ui.login.LoginRepo$2
+me/akshay/arclothing/data/web/RetrofitClient.java
+ me.akshay.arclothing.data.web.RetrofitClient
+me/akshay/arclothing/ui/search/CategoryAdapter.java
+ me.akshay.arclothing.ui.search.CategoryAdapter
+ me.akshay.arclothing.ui.search.CategoryAdapter$CategoryHolder
 me/akshay/arclothing/ui/dashboard/adapter/OfferProductAdapter.java
  me.akshay.arclothing.ui.dashboard.adapter.OfferProductAdapter
  me.akshay.arclothing.ui.dashboard.adapter.OfferProductAdapter$OfferHolder
-me/akshay/arclothing/service/FirebaseNotifyService.java
- me.akshay.arclothing.service.FirebaseNotifyService
-me/akshay/arclothing/databinding/LayoutNoInternetBinding.java
- me.akshay.arclothing.databinding.LayoutNoInternetBinding
-me/akshay/arclothing/databinding/ItemProductBinding.java
- me.akshay.arclothing.databinding.ItemProductBinding
-me/akshay/arclothing/databinding/FragSliderMainBinding.java
- me.akshay.arclothing.databinding.FragSliderMainBinding
+me/akshay/arclothing/data/encryption/MCrypt.java
+ me.akshay.arclothing.data.encryption.MCrypt
+me/akshay/arclothing/common/models/SliderModel.java
+ me.akshay.arclothing.common.models.SliderModel
+ me.akshay.arclothing.common.models.SliderModel$1
+me/akshay/arclothing/service/provider/payu/PayUMoney.java
+ me.akshay.arclothing.service.provider.payu.PayUMoney
 me/akshay/arclothing/databinding/ItemOfferProductBinding.java
  me.akshay.arclothing.databinding.ItemOfferProductBinding
-me/akshay/arclothing/data/util/UtilityClass.java
- me.akshay.arclothing.data.util.UtilityClass
- me.akshay.arclothing.data.util.UtilityClass$1
-me/akshay/arclothing/data/room/FoldDatabase.java
- me.akshay.arclothing.data.room.FoldDatabase
+me/akshay/arclothing/common/response/CategoryResponse.java
+ me.akshay.arclothing.common.response.CategoryResponse
+me/akshay/arclothing/common/response/SliderResponse.java
+ me.akshay.arclothing.common.response.SliderResponse
+me/akshay/arclothing/common/models/DeviceModel.java
+ me.akshay.arclothing.common.models.DeviceModel
+me/akshay/arclothing/common/response/MainProductResponse.java
+ me.akshay.arclothing.common.response.MainProductResponse
+me/akshay/arclothing/ui/cart/CartRepo.java
+ me.akshay.arclothing.ui.cart.CartRepo
 me/akshay/arclothing/ui/product/details/ProductDetailsActivity.java
  me.akshay.arclothing.ui.product.details.ProductDetailsActivity
+me/akshay/arclothing/DataBindingTriggerClass.java
+ me.akshay.arclothing.DataBindingTriggerClass
+me/akshay/arclothing/ui/login/LoginRepoCallBack.java
+ me.akshay.arclothing.ui.login.LoginRepoCallBack
+me/akshay/arclothing/ui/search/SearchRepo.java
+ me.akshay.arclothing.ui.search.SearchRepo
+ me.akshay.arclothing.ui.search.SearchRepo$1
+ me.akshay.arclothing.ui.search.SearchRepo$2
 me/akshay/arclothing/ui/login/LoginActivity.java
  me.akshay.arclothing.ui.login.LoginActivity
  me.akshay.arclothing.ui.login.LoginActivity$1
+me/akshay/arclothing/BuildConfig.java
+ me.akshay.arclothing.BuildConfig
+me/akshay/arclothing/ui/login/LoginBottomSheet.java
+ me.akshay.arclothing.ui.login.LoginBottomSheet
+ me.akshay.arclothing.ui.login.LoginBottomSheet$1
+ me.akshay.arclothing.ui.login.LoginBottomSheet$LoginCallBack
+me/akshay/arclothing/ui/search/SearchViewModel.java
+ me.akshay.arclothing.ui.search.SearchViewModel
 me/akshay/arclothing/ui/helper/common/UiHelper.java
  me.akshay.arclothing.ui.helper.common.UiHelper
  me.akshay.arclothing.ui.helper.common.UiHelper$LaunchActivityForResult
-me/akshay/arclothing/databinding/LayoutBottomNavBinding.java
- me.akshay.arclothing.databinding.LayoutBottomNavBinding
 me/akshay/arclothing/ui/dashboard/adapter/ProductAdapter.java
  me.akshay.arclothing.ui.dashboard.adapter.ProductAdapter
  me.akshay.arclothing.ui.dashboard.adapter.ProductAdapter$ProductHolder
-me/akshay/arclothing/service/provider/payu/PayUMoney.java
- me.akshay.arclothing.service.provider.payu.PayUMoney
-me/akshay/arclothing/ui/dashboard/adapter/FeatureProductAdapter.java
- me.akshay.arclothing.ui.dashboard.adapter.FeatureProductAdapter
- me.akshay.arclothing.ui.dashboard.adapter.FeatureProductAdapter$FeatureProductHolder
 me/akshay/arclothing/ui/dashboard/DashboardFragment.java
  me.akshay.arclothing.ui.dashboard.DashboardFragment
  me.akshay.arclothing.ui.dashboard.DashboardFragment$1
-me/akshay/arclothing/ui/dashboard/adapter/DashboardDataAdapter.java
- me.akshay.arclothing.ui.dashboard.adapter.DashboardDataAdapter
+me/akshay/arclothing/ui/home/HomeActivity.java
+ me.akshay.arclothing.ui.home.HomeActivity
+me/akshay/arclothing/ui/search/SearchFragment.java
+ me.akshay.arclothing.ui.search.SearchFragment
+ me.akshay.arclothing.ui.search.SearchFragment$1
+ me.akshay.arclothing.ui.search.SearchFragment$2

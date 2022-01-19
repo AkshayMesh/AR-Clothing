@@ -35,6 +35,7 @@
                         android:id="@+id/iv_product_image"
                         android:layout_width="0dp"
                         android:layout_height="240dp"
+                        android:transitionName="@string/product_transition"
                         android:background="@color/colorPrimary"
                         card_view:layout_constraintStart_toStartOf="parent"
                         card_view:layout_constraintTop_toTopOf="parent"

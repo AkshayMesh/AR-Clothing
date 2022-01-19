@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="@string/login_text"
-                android:textColor="@color/semi_black" />
+                android:textColor="@color/colorGrey" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,24 +92,25 @@
 
                 <EditText
                     android:id="@+id/et_phone_no"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:autofillHints="null"
                     android:background="@color/transparent"
-                    android:ems="10"
                     android:hint="@string/enter_your_number"
+                    android:layout_weight="3"
                     android:inputType="phone"
                     android:paddingStart="32dp"
                     android:paddingTop="@dimen/dimen_12dp"
-                    android:paddingEnd="@dimen/dimen_12dp"
+                    android:paddingEnd="@dimen/dimen_0dp"
                     android:paddingBottom="@dimen/dimen_12dp"
                     android:textColor="@color/black"
                     android:textColorHint="@color/semi_white" />
 
                 <TextView
                     android:id="@+id/tv_get_otp"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="@drawable/blue_right_curve"
                     android:clickable="true"
                     android:focusable="true"

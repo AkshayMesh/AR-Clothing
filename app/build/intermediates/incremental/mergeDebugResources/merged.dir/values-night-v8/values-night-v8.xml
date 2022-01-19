@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#000000</color>
-    <color name="colorAccent">#A163F7</color>
-    <color name="colorPrimary">#056CEA</color>
-    <color name="colorPrimaryDark">#00A7F4</color>
+    <color name="colorAccent">#CE9A32</color>
+    <color name="colorGrey">#838383</color>
+    <color name="colorPrimary">#E86CB1</color>
+    <color name="colorPrimaryDark">#E91E87</color>
     <color name="day_night">#E6E6E6</color>
     <color name="error_red">#DF0551</color>
+    <color name="lightWhite">#eeeeee</color>
     <color name="overlay">#40000000</color>
     <color name="semi_black">#383838</color>
-    <color name="semi_white">#D8D8D8</color>
-    <color name="start_center">#2A76FA</color>
-    <color name="start_end">#00E5FF</color>
-    <color name="start_start">#0852D3</color>
+    <color name="semi_white">#CCCCCC</color>
+    <color name="start_center">#9C00A7</color>
+    <color name="start_end">#7A03BA</color>
+    <color name="start_start">#CE0089</color>
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <style name="Theme.AppCompat.DayNight" parent="Theme.AppCompat"/>

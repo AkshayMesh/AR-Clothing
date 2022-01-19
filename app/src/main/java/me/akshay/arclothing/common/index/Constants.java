@@ -10,6 +10,7 @@ public class Constants {
 
     public interface IntConstants {
         int LOADER_DELAY = 500;
+        int DELAY_INTERVAL = 2000;
     }
 
     public interface Credentials {

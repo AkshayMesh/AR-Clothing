@@ -4,7 +4,7 @@
             "outputFile": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\4c88fc968462722a56106622c47877d5\\transformed\\jetified-upisdk-1.0.2\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\f35e376dcba159802bd407e706db3ca3\\transformed\\jetified-upisdk-1.0.2\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

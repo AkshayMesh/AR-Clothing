@@ -4,17 +4,7 @@
             "outputFile": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\eed1ea475c92b0813b52325334165a91\\transformed\\jetified-plug-n-play-1.6.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,113,163,211,266,321,368",
-                        "endColumns": "57,49,47,54,54,46,60",
-                        "endOffsets": "108,158,206,261,316,363,424"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\144bc82d6f1777100bd0040393b2cae2\\transformed\\jetified-payumoney-sdk-7.6.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\2f5ba101a2b81012ccb92f1aea9c9e30\\transformed\\jetified-payumoney-sdk-7.6.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -28,6 +18,16 @@
                         "startOffsets": "429,488",
                         "endColumns": "58,37",
                         "endOffsets": "483,521"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\819b7c5cb9f0e2f8bd3d491189a2e91c\\transformed\\jetified-plug-n-play-1.6.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,113,163,211,266,321,368",
+                        "endColumns": "57,49,47,54,54,46,60",
+                        "endOffsets": "108,158,206,261,316,363,424"
                     }
                 },
                 {

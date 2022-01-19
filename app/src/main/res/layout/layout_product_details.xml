@@ -24,8 +24,15 @@
                 android:id="@+id/view_pager"
                 android:transitionName="product"
                 android:layout_width="match_parent"
+                android:layout_height="500dp"/>
+
+            <ImageView
+                android:id="@+id/iv_product_image"
+                android:scaleType="centerCrop"
+                android:transitionName="@string/product_transition"
+                android:layout_width="match_parent"
                 android:layout_height="500dp"
-                tool:targetApi="lollipop" />
+                android:contentDescription="@string/image_view_description" />
 
         </androidx.cardview.widget.CardView>
 

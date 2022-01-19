@@ -1,11 +1,11 @@
 [
     {
-        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_layout_no_internet.xml.flat",
-        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\layout_no_internet.xml"
-    },
-    {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_frag_slider_main.xml.flat",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\frag_slider_main.xml"
+    },
+    {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_layout_no_internet.xml.flat",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\layout_no_internet.xml"
     },
     {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_action_cart.png.flat",
@@ -92,6 +92,14 @@
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\drawable\\ic_menu_share.xml"
     },
     {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_item_category.xml.flat",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\item_category.xml"
+    },
+    {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_frag_search.xml.flat",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\frag_search.xml"
+    },
+    {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\drawable_bg_progress_bar.xml.flat",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\drawable\\bg_progress_bar.xml"
     },
@@ -158,6 +166,10 @@
     {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_frag_dashboard.xml.flat",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\frag_dashboard.xml"
+    },
+    {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\drawable_gradient_card.xml.flat",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\drawable\\gradient_card.xml"
     },
     {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\merged_res\\debug\\layout_item_product.xml.flat",

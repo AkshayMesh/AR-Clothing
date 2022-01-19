@@ -32,6 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
+                    android:transitionName="@string/product_transition"
                     android:contentDescription="@string/image_view_description"
                     android:adjustViewBounds="true"/>
 

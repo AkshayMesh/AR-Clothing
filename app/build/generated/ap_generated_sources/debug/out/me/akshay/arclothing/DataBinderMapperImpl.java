@@ -22,7 +22,9 @@ import me.akshay.arclothing.databinding.ActivityProductDetailsBindingImpl;
 import me.akshay.arclothing.databinding.ActivityStartBindingImpl;
 import me.akshay.arclothing.databinding.FragDashboardBindingImpl;
 import me.akshay.arclothing.databinding.FragOtpBindingImpl;
+import me.akshay.arclothing.databinding.FragSearchBindingImpl;
 import me.akshay.arclothing.databinding.FragSliderMainBindingImpl;
+import me.akshay.arclothing.databinding.ItemCategoryBindingImpl;
 import me.akshay.arclothing.databinding.ItemFearureProductBindingImpl;
 import me.akshay.arclothing.databinding.ItemOfferProductBindingImpl;
 import me.akshay.arclothing.databinding.ItemProductBindingImpl;
@@ -48,27 +50,31 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGOTP = 7;
 
-  private static final int LAYOUT_FRAGSLIDERMAIN = 8;
+  private static final int LAYOUT_FRAGSEARCH = 8;
 
-  private static final int LAYOUT_ITEMFEARUREPRODUCT = 9;
+  private static final int LAYOUT_FRAGSLIDERMAIN = 9;
 
-  private static final int LAYOUT_ITEMOFFERPRODUCT = 10;
+  private static final int LAYOUT_ITEMCATEGORY = 10;
 
-  private static final int LAYOUT_ITEMPRODUCT = 11;
+  private static final int LAYOUT_ITEMFEARUREPRODUCT = 11;
 
-  private static final int LAYOUT_ITEMRELATED = 12;
+  private static final int LAYOUT_ITEMOFFERPRODUCT = 12;
 
-  private static final int LAYOUT_LAYOUTINTERESTPRODUCT = 13;
+  private static final int LAYOUT_ITEMPRODUCT = 13;
 
-  private static final int LAYOUT_LAYOUTLOADER = 14;
+  private static final int LAYOUT_ITEMRELATED = 14;
 
-  private static final int LAYOUT_LAYOUTNOINTERNET = 15;
+  private static final int LAYOUT_LAYOUTINTERESTPRODUCT = 15;
 
-  private static final int LAYOUT_LAYOUTPRODUCTACTIONS = 16;
+  private static final int LAYOUT_LAYOUTLOADER = 16;
 
-  private static final int LAYOUT_LAYOUTPRODUCTDETAILS = 17;
+  private static final int LAYOUT_LAYOUTNOINTERNET = 17;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(17);
+  private static final int LAYOUT_LAYOUTPRODUCTACTIONS = 18;
+
+  private static final int LAYOUT_LAYOUTPRODUCTDETAILS = 19;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(19);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.about_product, LAYOUT_ABOUTPRODUCT);
@@ -78,7 +84,9 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.activity_start, LAYOUT_ACTIVITYSTART);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.frag_dashboard, LAYOUT_FRAGDASHBOARD);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.frag_otp, LAYOUT_FRAGOTP);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.frag_search, LAYOUT_FRAGSEARCH);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.frag_slider_main, LAYOUT_FRAGSLIDERMAIN);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_category, LAYOUT_ITEMCATEGORY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_fearure_product, LAYOUT_ITEMFEARUREPRODUCT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_offer_product, LAYOUT_ITEMOFFERPRODUCT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.akshay.arclothing.R.layout.item_product, LAYOUT_ITEMPRODUCT);
@@ -141,11 +149,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for frag_otp is invalid. Received: " + tag);
         }
+        case  LAYOUT_FRAGSEARCH: {
+          if ("layout/frag_search_0".equals(tag)) {
+            return new FragSearchBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for frag_search is invalid. Received: " + tag);
+        }
         case  LAYOUT_FRAGSLIDERMAIN: {
           if ("layout/frag_slider_main_0".equals(tag)) {
             return new FragSliderMainBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for frag_slider_main is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ITEMCATEGORY: {
+          if ("layout/item_category_0".equals(tag)) {
+            return new ItemCategoryBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for item_category is invalid. Received: " + tag);
         }
         case  LAYOUT_ITEMFEARUREPRODUCT: {
           if ("layout/item_fearure_product_0".equals(tag)) {
@@ -258,7 +278,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(17);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(19);
 
     static {
       sKeys.put("layout/about_product_0", me.akshay.arclothing.R.layout.about_product);
@@ -268,7 +288,9 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_start_0", me.akshay.arclothing.R.layout.activity_start);
       sKeys.put("layout/frag_dashboard_0", me.akshay.arclothing.R.layout.frag_dashboard);
       sKeys.put("layout/frag_otp_0", me.akshay.arclothing.R.layout.frag_otp);
+      sKeys.put("layout/frag_search_0", me.akshay.arclothing.R.layout.frag_search);
       sKeys.put("layout/frag_slider_main_0", me.akshay.arclothing.R.layout.frag_slider_main);
+      sKeys.put("layout/item_category_0", me.akshay.arclothing.R.layout.item_category);
       sKeys.put("layout/item_fearure_product_0", me.akshay.arclothing.R.layout.item_fearure_product);
       sKeys.put("layout/item_offer_product_0", me.akshay.arclothing.R.layout.item_offer_product);
       sKeys.put("layout/item_product_0", me.akshay.arclothing.R.layout.item_product);

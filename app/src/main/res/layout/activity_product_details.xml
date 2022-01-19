@@ -45,13 +45,12 @@
                         android:id="@+id/tv_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingEnd="16dp"
-                        android:paddingStart="16dp"
                         android:text="@string/product_details_title"
                         android:textColor="@color/white"
                         android:textSize="18sp"
-                        app:layout_constraintStart_toEndOf="@+id/toolbar_logo"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
 
                     <androidx.cardview.widget.CardView
@@ -103,6 +102,7 @@
                         android:id="@+id/share_iv"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
+                        android:visibility="gone"
                         android:src="@drawable/ic_menu_share"
                         android:layout_marginEnd="18dp"
                         android:contentDescription="@string/image_view_description"

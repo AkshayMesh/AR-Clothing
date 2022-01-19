@@ -4,6 +4,8 @@ package me.akshay.arclothing.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
@@ -15,11 +17,20 @@ import me.akshay.arclothing.R;
 import me.akshay.arclothing.ui.product.details.ProductViewModel;
 
 public abstract class ItemRelatedBinding extends ViewDataBinding {
+  @NonNull
+  public final ImageView imageView;
+
+  @NonNull
+  public final TextView textViewPrice;
+
   @Bindable
   protected ProductViewModel mModel;
 
-  protected ItemRelatedBinding(Object _bindingComponent, View _root, int _localFieldCount) {
+  protected ItemRelatedBinding(Object _bindingComponent, View _root, int _localFieldCount,
+      ImageView imageView, TextView textViewPrice) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.imageView = imageView;
+    this.textViewPrice = textViewPrice;
   }
 
   public abstract void setModel(@Nullable ProductViewModel model);

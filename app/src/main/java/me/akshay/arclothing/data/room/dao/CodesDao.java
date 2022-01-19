@@ -1,5 +1,6 @@
 package me.akshay.arclothing.data.room.dao;
 
+import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -8,11 +9,11 @@ import java.util.List;
 
 import me.akshay.arclothing.common.models.ProductInventory;
 
-//@Dao
+@Dao
 public interface CodesDao {
 
     @Query("SELECT * FROM " + TableNames.CODES)
-    List<String> getScrollableCodes();
+    List<ProductInventory> getScrollableCodes();
 
     @Query("DELETE FROM " + TableNames.CODES)
     void nukeTable();

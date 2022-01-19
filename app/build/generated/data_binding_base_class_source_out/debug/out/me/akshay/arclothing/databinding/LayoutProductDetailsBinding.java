@@ -4,6 +4,7 @@ package me.akshay.arclothing.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -24,6 +25,9 @@ public abstract class LayoutProductDetailsBinding extends ViewDataBinding {
   public final CardView favCard;
 
   @NonNull
+  public final ImageView ivProductImage;
+
+  @NonNull
   public final ConstraintLayout layoutViewPagerImage;
 
   @NonNull
@@ -33,11 +37,12 @@ public abstract class LayoutProductDetailsBinding extends ViewDataBinding {
   public final ViewPager viewPager;
 
   protected LayoutProductDetailsBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      CardView cView, CardView favCard, ConstraintLayout layoutViewPagerImage,
-      CircleIndicator pagerIndicator, ViewPager viewPager) {
+      CardView cView, CardView favCard, ImageView ivProductImage,
+      ConstraintLayout layoutViewPagerImage, CircleIndicator pagerIndicator, ViewPager viewPager) {
     super(_bindingComponent, _root, _localFieldCount);
     this.cView = cView;
     this.favCard = favCard;
+    this.ivProductImage = ivProductImage;
     this.layoutViewPagerImage = layoutViewPagerImage;
     this.pagerIndicator = pagerIndicator;
     this.viewPager = viewPager;

@@ -52,7 +52,7 @@ public class InterestProductAdapter extends RecyclerView.Adapter<InterestProduct
     @NonNull
     @Override
     public ProductHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemRelatedBinding binding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.item_product, parent, false);
+        ItemRelatedBinding binding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.item_related, parent, false);
         return new ProductHolder(binding);
     }
 

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
 MERGED from [androidx.databinding:databinding-adapters:7.0.0] C:\Users\Lenovo\.gradle\caches\transforms-3\991aad63ed8beda19300543ef0f85b84\transformed\databinding-adapters-7.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:databinding-runtime:7.0.0] C:\Users\Lenovo\.gradle\caches\transforms-3\409ff78f14f2de3c166139aafeac8343\transformed\databinding-runtime-7.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:viewbinding:7.0.0] C:\Users\Lenovo\.gradle\caches\transforms-3\890ead7a225e8e8adbabf1126908806d\transformed\jetified-viewbinding-7.0.0\AndroidManifest.xml:17:1-22:12
@@ -105,22 +105,22 @@ MERGED from [com.google.android.datatransport:transport-api:2.2.1] C:\Users\Leno
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Lenovo\.gradle\caches\transforms-3\355962095dccb4a30332cf5f5fb4291d\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.aakira:expandable-layout:1.6.0] C:\Users\Lenovo\.gradle\caches\transforms-3\1366fdfb87fe129accf155da2ee4ce73\transformed\jetified-expandable-layout-1.6.0\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\Lenovo\.gradle\caches\transforms-3\809d57575b71409a1cc66611dd343812\transformed\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
-INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
+INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:4:5-35
 		INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml
 		INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
 		INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-46:12
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:1-47:12
 		INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:2:11-69
@@ -203,7 +203,7 @@ ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:13:
 	android:name
 		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:13:22-77
 application
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:15:5-44:19
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:15:5-45:19
 MERGED from [com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1] C:\Users\Lenovo\.gradle\caches\transforms-3\759809b9210e499eb8d10654aee6c443\transformed\jetified-swipe-reveal-layout-1.4.1\AndroidManifest.xml:12:5-20
 MERGED from [com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1] C:\Users\Lenovo\.gradle\caches\transforms-3\759809b9210e499eb8d10654aee6c443\transformed\jetified-swipe-reveal-layout-1.4.1\AndroidManifest.xml:12:5-20
 MERGED from [com.payumoney.sdkui:plug-n-play:1.6.0] C:\Users\Lenovo\.gradle\caches\transforms-3\eed1ea475c92b0813b52325334165a91\transformed\jetified-plug-n-play-1.6.0\AndroidManifest.xml:16:5-29:19
@@ -320,37 +320,39 @@ ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:24:
 	android:name
 		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:25:13-70
 activity#me.akshay.arclothing.ui.home.HomeActivity
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:27:9-29:39
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:27:9-30:49
 	android:exported
 		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:29:13-36
+	android:theme
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:30:13-47
 	android:name
 		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:28:13-49
 activity#me.akshay.arclothing.ui.start.StartActivity
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:30:9-36:20
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:31:9-37:20
 	android:name
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:30:19-57
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:31:19-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:31:13-35:29
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:32:13-36:29
 action#android.intent.action.MAIN
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:32:17-69
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:32:25-66
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:35:27-74
 activity#me.akshay.arclothing.ui.login.LoginActivity
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:37:9-39:48
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:38:9-40:48
 	android:label
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:39:13-45
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:40:13-45
 	android:name
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:38:13-51
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:39:13-51
 meta-data#preloaded_fonts
-ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:41:9-43:57
+ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:42:9-44:57
 	android:resource
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:43:13-54
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:44:13-54
 	android:name
-		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:42:13-43
+		ADDED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml:43:13-43
 uses-sdk
 INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\akshay\MeWorkspace\ARClothing\app\src\main\AndroidManifest.xml

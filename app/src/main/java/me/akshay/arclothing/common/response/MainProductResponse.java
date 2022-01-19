@@ -10,6 +10,8 @@ import me.akshay.arclothing.common.models.ProductModel;
 
 public class MainProductResponse {
 
+    public MainProductResponse() {}
+
     @SerializedName("status_code")
     @Expose
     public int statusCode;

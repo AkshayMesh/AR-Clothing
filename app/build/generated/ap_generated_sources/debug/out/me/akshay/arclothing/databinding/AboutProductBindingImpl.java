@@ -14,11 +14,7 @@ public class AboutProductBindingImpl extends AboutProductBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.layout_buy_now, 1);
-        sViewsWithIds.put(R.id.text_view_title, 2);
-        sViewsWithIds.put(R.id.text_view_product_description, 3);
-        sViewsWithIds.put(R.id.prev_price, 4);
-        sViewsWithIds.put(R.id.current_price, 5);
+        sViewsWithIds.put(R.id.layout_buy_now, 5);
     }
     // views
     @NonNull
@@ -33,14 +29,18 @@ public class AboutProductBindingImpl extends AboutProductBinding  {
     }
     private AboutProductBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.TextView) bindings[5]
-            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[1]
             , (android.widget.TextView) bindings[4]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[5]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[2]
+            , (android.widget.TextView) bindings[1]
             );
+        this.currentPrice.setTag(null);
         this.mboundView0 = (androidx.cardview.widget.CardView) bindings[0];
         this.mboundView0.setTag(null);
+        this.prevPrice.setTag(null);
+        this.textViewProductDescription.setTag(null);
+        this.textViewTitle.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -49,7 +49,7 @@ public class AboutProductBindingImpl extends AboutProductBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -67,7 +67,22 @@ public class AboutProductBindingImpl extends AboutProductBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.viewModel == variableId) {
+            setViewModel((me.akshay.arclothing.ui.product.details.ProductViewModel) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setViewModel(@Nullable me.akshay.arclothing.ui.product.details.ProductViewModel ViewModel) {
+        this.mViewModel = ViewModel;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.viewModel);
+        super.requestRebind();
     }
 
     @Override
@@ -84,14 +99,44 @@ public class AboutProductBindingImpl extends AboutProductBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        java.lang.String viewModelCurrentPrice = null;
+        me.akshay.arclothing.ui.product.details.ProductViewModel viewModel = mViewModel;
+        java.lang.String viewModelTitle = null;
+        java.lang.String viewModelDescription = null;
+        java.lang.String viewModelPreviousPrice = null;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (viewModel != null) {
+                    // read viewModel.currentPrice
+                    viewModelCurrentPrice = viewModel.currentPrice;
+                    // read viewModel.title
+                    viewModelTitle = viewModel.title;
+                    // read viewModel.description
+                    viewModelDescription = viewModel.description;
+                    // read viewModel.previousPrice
+                    viewModelPreviousPrice = viewModel.previousPrice;
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.currentPrice, viewModelCurrentPrice);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.prevPrice, viewModelPreviousPrice);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textViewProductDescription, viewModelDescription);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textViewTitle, viewModelTitle);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): viewModel
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

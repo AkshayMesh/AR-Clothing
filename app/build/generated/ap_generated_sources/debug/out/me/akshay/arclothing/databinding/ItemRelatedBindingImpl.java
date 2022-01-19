@@ -13,7 +13,8 @@ public class ItemRelatedBindingImpl extends ItemRelatedBinding  {
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = null;
+        sViewsWithIds = new android.util.SparseIntArray();
+        sViewsWithIds.put(R.id.image_view, 2);
     }
     // views
     @NonNull
@@ -24,13 +25,16 @@ public class ItemRelatedBindingImpl extends ItemRelatedBinding  {
     // Inverse Binding Event Handlers
 
     public ItemRelatedBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 1, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
     }
     private ItemRelatedBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.ImageView) bindings[2]
+            , (android.widget.TextView) bindings[1]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
+        this.textViewPrice.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -68,6 +72,11 @@ public class ItemRelatedBindingImpl extends ItemRelatedBinding  {
 
     public void setModel(@Nullable me.akshay.arclothing.ui.product.details.ProductViewModel Model) {
         this.mModel = Model;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.model);
+        super.requestRebind();
     }
 
     @Override
@@ -84,7 +93,24 @@ public class ItemRelatedBindingImpl extends ItemRelatedBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        me.akshay.arclothing.ui.product.details.ProductViewModel model = mModel;
+        java.lang.String modelCurrentPrice = null;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+
+
+
+                if (model != null) {
+                    // read model.currentPrice
+                    modelCurrentPrice = model.currentPrice;
+                }
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textViewPrice, modelCurrentPrice);
+        }
     }
     // Listener Stub Implementations
     // callback impls

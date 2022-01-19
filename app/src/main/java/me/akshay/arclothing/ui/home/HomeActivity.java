@@ -12,10 +12,12 @@ import me.akshay.arclothing.R;
 import me.akshay.arclothing.data.preference.Local;
 import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.ActivityHomeBinding;
+import me.akshay.arclothing.ui.cart.CartFragment;
 import me.akshay.arclothing.ui.dashboard.DashboardFragment;
 import me.akshay.arclothing.ui.helper.common.StatusBarHelper;
 import me.akshay.arclothing.ui.helper.common.UiHelper;
 import me.akshay.arclothing.ui.login.LoginActivity;
+import me.akshay.arclothing.ui.search.SearchFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -45,12 +47,16 @@ public class HomeActivity extends AppCompatActivity {
     private void initBottomNav() {
         binding.bottomNav.bottomNav.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
+                case R.id.home:
+                    UtilityClass.commitFragment(this, binding.fragmentContainer.getId(), new DashboardFragment());
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                    break;
                 case R.id.search:
-//                    startActivity(new Intent(HomeActivity.this, SearchActivity.class));
+                    UtilityClass.commitFragment(this, binding.fragmentContainer.getId(), new SearchFragment());
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     break;
                 case R.id.cart:
-//                    startActivity(new Intent(HomeActivity.this, CartActivity.class));
+                    UtilityClass.commitFragment(this, binding.fragmentContainer.getId(), new CartFragment());
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                     break;
                 case R.id.profile:

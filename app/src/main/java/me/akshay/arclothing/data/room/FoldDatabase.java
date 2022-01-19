@@ -6,10 +6,11 @@ import android.content.Context;
 import androidx.room.Database;
 
 import me.akshay.arclothing.R;
+import me.akshay.arclothing.common.models.ProductInventory;
 import me.akshay.arclothing.data.room.dao.CodesDao;
 
-//@Database(entities = {String.class},
-//        version = 1, exportSchema = false)
+@Database(entities = {ProductInventory.class},
+        version = 1, exportSchema = false)
 public abstract class FoldDatabase extends AppDatabase {
 
     private static volatile FoldDatabase sInstance;

@@ -4,13 +4,11 @@ package me.akshay.arclothing.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
 import androidx.databinding.DataBindingUtil;
@@ -22,15 +20,6 @@ import java.lang.Object;
 import me.akshay.arclothing.R;
 
 public abstract class FragDashboardBinding extends ViewDataBinding {
-  @NonNull
-  public final ImageView cartIv;
-
-  @NonNull
-  public final TextView cartTv;
-
-  @NonNull
-  public final CardView countCard;
-
   @NonNull
   public final LinearLayout layoutSliderMainDots;
 
@@ -65,15 +54,11 @@ public abstract class FragDashboardBinding extends ViewDataBinding {
   public final ViewPager vpSliderMain;
 
   protected FragDashboardBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView cartIv, TextView cartTv, CardView countCard, LinearLayout layoutSliderMainDots,
-      ProgressBar progressBar, ConstraintLayout relativeLayout, RecyclerView rvFeatureProduct,
-      RecyclerView rvOfferProduct, RecyclerView rvPDetailProductGrid, NestedScrollView scrollView,
-      TextView textViewFeaturedProducts, TextView textViewPopularProduct,
-      TextView textViewRecentProducts, ViewPager vpSliderMain) {
+      LinearLayout layoutSliderMainDots, ProgressBar progressBar, ConstraintLayout relativeLayout,
+      RecyclerView rvFeatureProduct, RecyclerView rvOfferProduct, RecyclerView rvPDetailProductGrid,
+      NestedScrollView scrollView, TextView textViewFeaturedProducts,
+      TextView textViewPopularProduct, TextView textViewRecentProducts, ViewPager vpSliderMain) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.cartIv = cartIv;
-    this.cartTv = cartTv;
-    this.countCard = countCard;
     this.layoutSliderMainDots = layoutSliderMainDots;
     this.progressBar = progressBar;
     this.relativeLayout = relativeLayout;

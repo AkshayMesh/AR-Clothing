@@ -16,8 +16,9 @@ public class LayoutProductDetailsBindingImpl extends LayoutProductDetailsBinding
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.c_view, 1);
         sViewsWithIds.put(R.id.view_pager, 2);
-        sViewsWithIds.put(R.id.pager_indicator, 3);
-        sViewsWithIds.put(R.id.fav_card, 4);
+        sViewsWithIds.put(R.id.iv_product_image, 3);
+        sViewsWithIds.put(R.id.pager_indicator, 4);
+        sViewsWithIds.put(R.id.fav_card, 5);
     }
     // views
     // variables
@@ -26,14 +27,15 @@ public class LayoutProductDetailsBindingImpl extends LayoutProductDetailsBinding
     // Inverse Binding Event Handlers
 
     public LayoutProductDetailsBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
     private LayoutProductDetailsBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.cardview.widget.CardView) bindings[1]
-            , (androidx.cardview.widget.CardView) bindings[4]
+            , (androidx.cardview.widget.CardView) bindings[5]
+            , (android.widget.ImageView) bindings[3]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
-            , (me.relex.circleindicator.CircleIndicator) bindings[3]
+            , (me.relex.circleindicator.CircleIndicator) bindings[4]
             , (androidx.viewpager.widget.ViewPager) bindings[2]
             );
         this.layoutViewPagerImage.setTag(null);

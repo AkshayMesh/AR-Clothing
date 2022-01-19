@@ -7,7 +7,9 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -18,10 +20,12 @@ import me.akshay.arclothing.R;
 import me.akshay.arclothing.common.ItemClickListener;
 import me.akshay.arclothing.common.models.ProductModel;
 import me.akshay.arclothing.data.preference.Local;
+import me.akshay.arclothing.data.room.DatabaseUtil;
 import me.akshay.arclothing.data.util.NetworkHelper;
 import me.akshay.arclothing.databinding.ActivityProductDetailsBinding;
 import me.akshay.arclothing.ui.helper.common.Loader;
 import me.akshay.arclothing.ui.helper.common.StatusBarHelper;
+import me.akshay.arclothing.ui.helper.common.UiHelper;
 
 public class ProductDetailsActivity extends AppCompatActivity implements ItemClickListener<ProductModel> {
 
@@ -30,6 +34,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements ItemCli
     private ActivityProductDetailsBinding binding;
     private Loader loader;
     private InterestProductAdapter mProductAdapter;
+    private ProductModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements ItemCli
 
         initInterestProductRecycler();
         checkNetworkStatus();
+
     }
 
     private void checkNetworkStatus() {
@@ -63,17 +69,29 @@ public class ProductDetailsActivity extends AppCompatActivity implements ItemCli
     }
 
     private void setObservers() {
-        viewModel.getErrorMsg().observe(this, s ->
-                Toast.makeText(ProductDetailsActivity.this, s, Toast.LENGTH_SHORT).show());
+        viewModel.getErrorMsg().observe(this, s -> {
+            loader.stopLoader();
+            Toast.makeText(ProductDetailsActivity.this, s, Toast.LENGTH_SHORT).show();
+            finish();
+        });
         viewModel.getProductsResponse().observe(this, rs->
                 mProductAdapter.addItem(rs.data));
         viewModel.getProductResponse().observe(this, r->{
-            ProductModel model = r.data;
-            viewModel.title = model.title;
-            viewModel.description = model.description;
-            viewModel.currentPrice = String.format("%s%s", Local.getCurrency(ProductDetailsActivity.this), model.currentPrice);
-            viewModel.previousPrice = String.format("%s%s", Local.getCurrency(ProductDetailsActivity.this), model.previousPrice);
+            loader.stopLoader();
+            setModel(r.data);
+            binding.layoutBuy.setViewModel(viewModel);
+            binding.layoutImage.pagerIndicator.setVisibility(View.GONE);
+            UiHelper.setUrlToImageView(this, binding.layoutImage.ivProductImage, r.data.imageUri);
+            setClickActions();
         });
+    }
+
+    private void setClickActions() {
+        DatabaseUtil.init(this);
+        binding.layoutAdd.buttonBuyNow.setOnClickListener(view -> {});
+        binding.layoutAdd.fabCart.setOnClickListener(view ->
+            AsyncTask.execute(()->
+                DatabaseUtil.on().insertItem(DatabaseUtil.getInventoryFromModel(model))));
     }
 
     private void initActivity() {
@@ -91,6 +109,14 @@ public class ProductDetailsActivity extends AppCompatActivity implements ItemCli
         }
     }
 
+    private void setModel(ProductModel model){
+        this.model = model;
+        viewModel.title = model.title;
+        viewModel.description = model.description;
+        viewModel.currentPrice = String.format("%s%s", Local.getCurrency(ProductDetailsActivity.this), model.currentPrice);
+        viewModel.previousPrice = String.format("%s%s", Local.getCurrency(ProductDetailsActivity.this), model.previousPrice);
+    }
+
     /**
      * initialization of {@link InterestProductAdapter } with recycler view
      */
@@ -105,6 +131,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements ItemCli
     public void onItemClick(View view, ProductModel item, int i) {
         Intent intent = new Intent(this, ProductDetailsActivity.class);
         intent.putExtra(PROD_CODE, ""+item.productCode);
-        startActivity(intent);
+        ActivityOptions options = ActivityOptions
+                .makeSceneTransitionAnimation(this, view, getString(R.string.product_transition));
+        startActivity(intent, options.toBundle());
     }
 }

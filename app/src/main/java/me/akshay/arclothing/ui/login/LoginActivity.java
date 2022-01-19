@@ -19,6 +19,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import me.akshay.arclothing.R;
 import me.akshay.arclothing.data.preference.Local;
+import me.akshay.arclothing.data.room.FoldDatabase;
 import me.akshay.arclothing.data.util.UtilityClass;
 import me.akshay.arclothing.databinding.ActivityLoginBinding;
 import me.akshay.arclothing.ui.helper.common.Loader;
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements LoginBottomSheet
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         }else {
+            FoldDatabase.init(this);
             initGoogleSignIn();
             initOnClicks();
         }

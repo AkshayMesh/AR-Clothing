@@ -27,11 +27,11 @@
                 android:transitionName="@string/input_state"
                 tools:targetApi="LOLLIPOP"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignBottom="@id/iv_slider_image"
-                android:background="@color/overlay" />
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_alignBottom="@id/iv_slider_image"-->
+<!--                android:background="@color/overlay" />-->
 
             <LinearLayout
                 android:layout_width="wrap_content"

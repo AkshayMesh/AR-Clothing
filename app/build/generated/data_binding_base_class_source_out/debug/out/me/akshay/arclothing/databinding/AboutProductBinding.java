@@ -8,11 +8,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import java.lang.Deprecated;
 import java.lang.Object;
 import me.akshay.arclothing.R;
+import me.akshay.arclothing.ui.product.details.ProductViewModel;
 
 public abstract class AboutProductBinding extends ViewDataBinding {
   @NonNull
@@ -30,6 +32,9 @@ public abstract class AboutProductBinding extends ViewDataBinding {
   @NonNull
   public final TextView textViewTitle;
 
+  @Bindable
+  protected ProductViewModel mViewModel;
+
   protected AboutProductBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView currentPrice, ConstraintLayout layoutBuyNow, TextView prevPrice,
       TextView textViewProductDescription, TextView textViewTitle) {
@@ -39,6 +44,13 @@ public abstract class AboutProductBinding extends ViewDataBinding {
     this.prevPrice = prevPrice;
     this.textViewProductDescription = textViewProductDescription;
     this.textViewTitle = textViewTitle;
+  }
+
+  public abstract void setViewModel(@Nullable ProductViewModel viewModel);
+
+  @Nullable
+  public ProductViewModel getViewModel() {
+    return mViewModel;
   }
 
   @NonNull

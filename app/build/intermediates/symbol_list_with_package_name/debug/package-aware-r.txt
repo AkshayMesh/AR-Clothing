@@ -1363,6 +1363,8 @@ color index_text_color
 color input_glow
 color input_glow_hidden
 color input_gray
+color lightPink
+color lightPurple
 color lightWhite
 color light_blue
 color light_gray
@@ -2160,6 +2162,7 @@ drawable edit_bg_white
 drawable emi_tenure_row_selection_bg
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient_card
 drawable hdfc_bank
 drawable hourglass
 drawable hsbc
@@ -2410,6 +2413,7 @@ id btn_pay_now_otp_screen
 id btn_pay_quick_pay
 id btn_pay_quick_pay_emi
 id btn_review_order_go_back
+id btn_search
 id btn_webview_review_order
 id buttonPanel
 id button_buy_now
@@ -2431,8 +2435,10 @@ id card_cardNumber
 id card_cardType_image
 id card_type
 id carryVelocity
+id cart
 id cart_iv
 id cart_tv
+id cat_img_card
 id cb_blank_overlay
 id cb_emi_tenure
 id cb_progressbar
@@ -2551,6 +2557,7 @@ id etEnterVpa
 id etEnterVpaLayout
 id et_code
 id et_phone_no
+id et_seach_product
 id exitUntilCollapsed
 id expand_activities_button
 id expandableLayout1
@@ -2619,6 +2626,8 @@ id ignoreRequest
 id image
 id imageView
 id imageView2
+id imageView3
+id image_view
 id imageview_recyclerview_item
 id img_dismiss_dialog
 id img_info_about_card
@@ -2639,6 +2648,7 @@ id item3
 id item4
 id item_touch_helper_previous_elevation
 id ivVpaSuccess
+id iv_category_image
 id iv_grid_product_image
 id iv_product_image
 id iv_slider_image
@@ -2659,6 +2669,7 @@ id layout_image
 id layout_include_no_net
 id layout_interest_product
 id layout_interested_product
+id layout_linear
 id layout_netBankView_header
 id layout_product_details
 id layout_saved_item_add_new_card
@@ -2858,9 +2869,11 @@ id rlInputVpa
 id rounded
 id row_index_key
 id rvApps
+id rv_category
 id rv_feature_product
 id rv_offer_product
 id rv_p_detail_product_grid
+id rv_serach_product_grid
 id s_payu_review_details
 id same_level
 id save_non_transition_alpha
@@ -2888,6 +2901,7 @@ id search_button
 id search_close_btn
 id search_edit_frame
 id search_go_btn
+id search_head
 id search_mag_icon
 id search_plate
 id search_src_text
@@ -2997,6 +3011,7 @@ id text_view_cancel_snooze_window
 id text_view_featured_products
 id text_view_no_net
 id text_view_popular_product
+id text_view_price
 id text_view_product_description
 id text_view_recent_products
 id text_view_resend_otp
@@ -3046,6 +3061,7 @@ id triangle
 id tvHeading
 id tvVerifyVpa
 id tvVpaName
+id tv_category_name
 id tv_emi_add_card_emi_bank_name
 id tv_emi_add_card_emi_bank_tenure
 id tv_emi_add_card_emi_details
@@ -3062,6 +3078,7 @@ id tv_grid_product_Previous_price
 id tv_grid_product_Previous_price_right
 id tv_grid_product_heading
 id tv_grid_product_price
+id tv_no_products
 id tv_offer_percent
 id tv_show_wallet_details
 id tv_slider_heading
@@ -3104,7 +3121,6 @@ id web_view
 id webview
 id west
 id wide
-id wished
 id withText
 id withinBounds
 id wrap
@@ -3251,6 +3267,7 @@ layout emi_tenure_screen
 layout footer_checkout_layout
 layout frag_dashboard
 layout frag_otp
+layout frag_search
 layout frag_slider_main
 layout fragment_add_card_fragment_emi
 layout fragment_add_card_fragment_new
@@ -3260,6 +3277,7 @@ layout fragment_pay_umoney
 layout fragment_result_new
 layout fragment_review_order
 layout fragment_validate_wallet
+layout item_category
 layout item_fearure_product
 layout item_offer_product
 layout item_product
@@ -3813,6 +3831,7 @@ string need_sign_in
 string no_internet_connect
 string no_internet_connection
 string no_internet_connection_try_later
+string no_products_found
 string or
 string order_details_btn_text
 string order_information
@@ -3857,6 +3876,7 @@ string popular_products
 string presented_by
 string proceed_to_pay
 string product_details_title
+string product_transition
 string progrees_msg_deactivating_autoload
 string progrees_msg_logging_user
 string progrees_msg_processing
@@ -3887,6 +3907,8 @@ string rs_symbol
 string save_for_later_text
 string save_this_card_for_future_use
 string saving_account_info
+string search
+string search_here
 string search_menu_title
 string secure_payments_by_payu
 string slogan
@@ -3920,6 +3942,7 @@ string text_withdraw_success
 string title_activity_citrus
 string title_transition
 string toast_insufficient_balance_in_wallet
+string top_category
 string top_offers
 string total
 string transaction_response_msg
@@ -4495,6 +4518,7 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style ThemeOverlayColorAccentRed
+style TransStatus
 style UpiSdkFullScreenDialogStyle
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid

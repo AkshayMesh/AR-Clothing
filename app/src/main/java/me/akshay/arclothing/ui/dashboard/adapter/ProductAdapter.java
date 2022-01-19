@@ -2,7 +2,6 @@ package me.akshay.arclothing.ui.dashboard.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -21,8 +20,8 @@ import me.akshay.arclothing.ui.helper.common.UiHelper;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductHolder> {
 
-    private ArrayList<ProductModel> productList;
-    private Activity context;
+    private final ArrayList<ProductModel> productList;
+    private final Activity context;
     public ItemClickListener<ProductModel> mListener;
 
     public ProductAdapter(ArrayList<ProductModel> productList, Activity context) {
@@ -68,7 +67,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
         }
 
         public void setBinding(ProductModel model){
-            itemView.setOnClickListener(view -> mListener.onItemClick(view, model, getAdapterPosition()));
+            itemView.setOnClickListener(view -> mListener.onItemClick(binding.ivProductImage, model, getAdapterPosition()));
             UiHelper.setUrlToImageView(context, binding.ivProductImage, model.imageUri);
             binding.setModel(getViewModel(model));
         }

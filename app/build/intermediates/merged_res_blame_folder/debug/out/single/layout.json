@@ -8,6 +8,10 @@
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\activity_home.xml"
     },
     {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_category.xml",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\item_category.xml"
+    },
+    {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\about_product.xml",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\about_product.xml"
     },
@@ -62,6 +66,10 @@
     {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_product_details.xml",
         "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\activity_product_details.xml"
+    },
+    {
+        "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\frag_search.xml",
+        "source": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\src\\main\\res\\layout\\frag_search.xml"
     },
     {
         "merged": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\frag_slider_main.xml",

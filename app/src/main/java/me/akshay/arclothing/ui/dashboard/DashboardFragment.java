@@ -4,6 +4,7 @@ import static me.akshay.arclothing.common.index.Constants.PreferenceKeys.MAIN_RE
 import static me.akshay.arclothing.common.index.Constants.PreferenceKeys.PROD_CODE;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -87,7 +88,9 @@ public class DashboardFragment extends Fragment implements ItemClickListener<Pro
     public void onItemClick(View view, ProductModel item, int i) {
         Intent intent = new Intent(mActivity, ProductDetailsActivity.class);
         intent.putExtra(PROD_CODE, ""+item.productCode);
-        startActivity(intent);
+        ActivityOptions options = ActivityOptions
+                .makeSceneTransitionAnimation(mActivity, view, getString(R.string.product_transition));
+        startActivity(intent, options.toBundle());
     }
 
     private void initDashBoardData() {

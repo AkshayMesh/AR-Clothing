@@ -4,7 +4,7 @@
             "outputFile": "F:\\akshay\\MeWorkspace\\ARClothing\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\eed1ea475c92b0813b52325334165a91\\transformed\\jetified-plug-n-play-1.6.0\\res\\values-v11\\values-v11.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\819b7c5cb9f0e2f8bd3d491189a2e91c\\transformed\\jetified-plug-n-play-1.6.0\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,6,11,16,19,29,33,37,38,42,53,69,75,79",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
